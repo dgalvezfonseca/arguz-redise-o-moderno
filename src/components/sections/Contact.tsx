@@ -1,15 +1,11 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Send, Clock } from "lucide-react";
+import { useState, FormEvent } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 export const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
@@ -26,76 +22,83 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contacto" className="py-24 bg-muted/50">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+    <section 
+      id="contacto" 
+      className="py-5"
+      style={{ paddingTop: '6rem', paddingBottom: '6rem', background: '#f1f5f9' }}
+    >
+      <div className="container">
+        <div className="row g-5">
           {/* Contact Info */}
-          <div>
-            <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
+          <div className="col-lg-6">
+            <span 
+              className="section-badge"
+              style={{ background: 'rgba(13, 74, 140, 0.1)', color: 'var(--bs-primary)' }}
+            >
               Contacto
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <h2 className="display-5 fw-bold mb-4" style={{ fontFamily: 'var(--bs-heading-font)' }}>
               ¿Listo para{" "}
               <span className="text-gradient">transformar</span>{" "}
               tu gestión documental?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="lead text-muted mb-5">
               Contáctanos hoy mismo y descubre cómo podemos ayudarte a optimizar 
               tu archivo documental. Nuestro equipo está listo para asesorarte.
             </p>
 
             {/* Contact details */}
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-primary" />
+            <div className="d-flex flex-column gap-4">
+              <div className="d-flex gap-3">
+                <div className="icon-box flex-shrink-0">
+                  <i className="bi bi-geo-alt fs-5"></i>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Dirección</h4>
-                  <p className="text-muted-foreground">
+                  <h4 className="h6 fw-bold mb-1">Dirección</h4>
+                  <p className="text-muted mb-0">
                     Av. Miguel Hidalgo 24-B, Lago de Gpe,<br />
                     Cuautitlán Izcalli, Estado de México, México
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-primary" />
+              <div className="d-flex gap-3">
+                <div className="icon-box flex-shrink-0">
+                  <i className="bi bi-telephone fs-5"></i>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Teléfono</h4>
+                  <h4 className="h6 fw-bold mb-1">Teléfono</h4>
                   <a 
                     href="tel:+525530042777" 
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted text-decoration-none"
                   >
                     +52 (55) 3004-2777
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-6 h-6 text-primary" />
+              <div className="d-flex gap-3">
+                <div className="icon-box flex-shrink-0">
+                  <i className="bi bi-envelope fs-5"></i>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Email</h4>
+                  <h4 className="h6 fw-bold mb-1">Email</h4>
                   <a 
                     href="mailto:contacto@arguz.com" 
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted text-decoration-none"
                   >
                     contacto@arguz.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-6 h-6 text-primary" />
+              <div className="d-flex gap-3">
+                <div className="icon-box flex-shrink-0">
+                  <i className="bi bi-clock fs-5"></i>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-1">Horario</h4>
-                  <p className="text-muted-foreground">
+                  <h4 className="h6 fw-bold mb-1">Horario</h4>
+                  <p className="text-muted mb-0">
                     Lunes a Viernes: 9:00 AM - 6:00 PM
                   </p>
                 </div>
@@ -104,115 +107,121 @@ export const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card rounded-3xl p-8 shadow-lg border border-border">
-            <h3 className="font-display text-2xl font-bold text-foreground mb-6">
-              Solicita tu cotización
-            </h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Nombre completo
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    placeholder="Tu nombre"
-                    required
-                    className="h-12"
-                  />
+          <div className="col-lg-6">
+            <div className="contact-card">
+              <h3 className="h4 fw-bold mb-4" style={{ fontFamily: 'var(--bs-heading-font)' }}>
+                Solicita tu cotización
+              </h3>
+              
+              <form onSubmit={handleSubmit}>
+                <div className="row g-3 mb-3">
+                  <div className="col-sm-6">
+                    <label htmlFor="name" className="form-label small fw-medium">
+                      Nombre completo
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control form-control-lg"
+                      id="name"
+                      name="name"
+                      placeholder="Tu nombre"
+                      required
+                    />
+                  </div>
+                  <div className="col-sm-6">
+                    <label htmlFor="company" className="form-label small fw-medium">
+                      Empresa
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control form-control-lg"
+                      id="company"
+                      name="company"
+                      placeholder="Nombre de tu empresa"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
-                    Empresa
-                  </label>
-                  <Input
-                    id="company"
-                    name="company"
-                    placeholder="Nombre de tu empresa"
-                    className="h-12"
-                  />
-                </div>
-              </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Correo electrónico
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="tu@email.com"
-                    required
-                    className="h-12"
-                  />
+                <div className="row g-3 mb-3">
+                  <div className="col-sm-6">
+                    <label htmlFor="email" className="form-label small fw-medium">
+                      Correo electrónico
+                    </label>
+                    <input
+                      type="email"
+                      className="form-control form-control-lg"
+                      id="email"
+                      name="email"
+                      placeholder="tu@email.com"
+                      required
+                    />
+                  </div>
+                  <div className="col-sm-6">
+                    <label htmlFor="phone" className="form-label small fw-medium">
+                      Teléfono
+                    </label>
+                    <input
+                      type="tel"
+                      className="form-control form-control-lg"
+                      id="phone"
+                      name="phone"
+                      placeholder="+52 (55) 1234-5678"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                    Teléfono
-                  </label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder="+52 (55) 1234-5678"
-                    className="h-12"
-                  />
-                </div>
-              </div>
 
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
-                  Servicio de interés
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  className="w-full h-12 px-4 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-                  required
+                <div className="mb-3">
+                  <label htmlFor="service" className="form-label small fw-medium">
+                    Servicio de interés
+                  </label>
+                  <select
+                    className="form-select form-select-lg"
+                    id="service"
+                    name="service"
+                    required
+                  >
+                    <option value="">Selecciona un servicio</option>
+                    <option value="digitalizacion">Digitalización de Documentos</option>
+                    <option value="consultoria">Consultoría Archivística</option>
+                    <option value="gestion">Gestión Documental</option>
+                    <option value="respaldo">Respaldo de Información</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+
+                <div className="mb-4">
+                  <label htmlFor="message" className="form-label small fw-medium">
+                    Mensaje
+                  </label>
+                  <textarea
+                    className="form-control"
+                    id="message"
+                    name="message"
+                    rows={4}
+                    placeholder="Cuéntanos sobre tu proyecto..."
+                    required
+                  ></textarea>
+                </div>
+
+                <button 
+                  type="submit" 
+                  className="btn btn-primary btn-lg w-100 d-flex align-items-center justify-content-center gap-2"
+                  disabled={isSubmitting}
                 >
-                  <option value="">Selecciona un servicio</option>
-                  <option value="digitalizacion">Digitalización de Documentos</option>
-                  <option value="consultoria">Consultoría Archivística</option>
-                  <option value="gestion">Gestión Documental</option>
-                  <option value="respaldo">Respaldo de Información</option>
-                  <option value="otro">Otro</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Mensaje
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder="Cuéntanos sobre tu proyecto..."
-                  rows={4}
-                  required
-                />
-              </div>
-
-              <Button 
-                type="submit" 
-                variant="default" 
-                size="lg" 
-                className="w-full"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  "Enviando..."
-                ) : (
-                  <>
-                    Enviar mensaje
-                    <Send className="w-4 h-4" />
-                  </>
-                )}
-              </Button>
-            </form>
+                  {isSubmitting ? (
+                    <>
+                      <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      Enviando...
+                    </>
+                  ) : (
+                    <>
+                      Enviar mensaje
+                      <i className="bi bi-send"></i>
+                    </>
+                  )}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

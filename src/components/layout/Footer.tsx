@@ -1,5 +1,3 @@
-import { Phone, Mail, MapPin } from "lucide-react";
-
 const services = [
   "Digitalización de Documentos",
   "Consultoría Archivística",
@@ -18,32 +16,42 @@ const links = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="footer-dark text-white py-5">
+      <div className="container">
+        <div className="row g-5">
           {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="mb-6">
-              <span className="font-display text-2xl font-bold">ARGUZ</span>
-              <p className="text-xs tracking-widest text-primary-foreground/70 mt-1">
-                QUE VIVA LA INFORMACIÓN
+          <div className="col-lg-3">
+            <div className="mb-4">
+              <span className="fw-bold fs-4" style={{ fontFamily: 'var(--bs-heading-font)' }}>
+                ARGUZ
+              </span>
+              <p 
+                className="text-uppercase mb-0 mt-1" 
+                style={{ fontSize: '0.65rem', letterSpacing: '0.15em', opacity: 0.7 }}
+              >
+                Que viva la información
               </p>
             </div>
-            <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6">
+            <p className="small opacity-75 mb-0">
               Su socio confiable para soluciones totales en procesos documentales. 
               Más de 25 años transformando la gestión de información.
             </p>
           </div>
 
           {/* Services */}
-          <div>
-            <h4 className="font-display font-bold text-lg mb-4">Servicios</h4>
-            <ul className="space-y-3">
+          <div className="col-lg-3">
+            <h5 className="fw-bold mb-4" style={{ fontFamily: 'var(--bs-heading-font)' }}>
+              Servicios
+            </h5>
+            <ul className="list-unstyled mb-0">
               {services.map((service, index) => (
-                <li key={index}>
+                <li key={index} className="mb-2">
                   <a 
                     href="#servicios" 
-                    className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
+                    className="text-white-50 text-decoration-none small"
+                    style={{ transition: 'color 0.2s' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--bs-secondary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = ''}
                   >
                     {service}
                   </a>
@@ -53,14 +61,19 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-display font-bold text-lg mb-4">Enlaces</h4>
-            <ul className="space-y-3">
+          <div className="col-lg-3">
+            <h5 className="fw-bold mb-4" style={{ fontFamily: 'var(--bs-heading-font)' }}>
+              Enlaces
+            </h5>
+            <ul className="list-unstyled mb-0">
               {links.map((link, index) => (
-                <li key={index}>
+                <li key={index} className="mb-2">
                   <a 
                     href={link.href} 
-                    className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
+                    className="text-white-50 text-decoration-none small"
+                    style={{ transition: 'color 0.2s' }}
+                    onMouseEnter={(e) => e.currentTarget.style.color = 'var(--bs-secondary)'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = ''}
                   >
                     {link.name}
                   </a>
@@ -70,30 +83,32 @@ export const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-display font-bold text-lg mb-4">Contacto</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-primary-foreground/80">
+          <div className="col-lg-3">
+            <h5 className="fw-bold mb-4" style={{ fontFamily: 'var(--bs-heading-font)' }}>
+              Contacto
+            </h5>
+            <ul className="list-unstyled mb-0">
+              <li className="d-flex gap-2 mb-3">
+                <i className="bi bi-geo-alt" style={{ color: 'var(--bs-secondary)' }}></i>
+                <span className="text-white-50 small">
                   Av. Miguel Hidalgo 24-B, Lago de Gpe,<br />
                   Cuautitlán Izcalli, EdoMex, México
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
+              <li className="d-flex align-items-center gap-2 mb-3">
+                <i className="bi bi-telephone" style={{ color: 'var(--bs-secondary)' }}></i>
                 <a 
                   href="tel:+525530042777" 
-                  className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
+                  className="text-white-50 text-decoration-none small"
                 >
                   +52 (55) 3004-2777
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
+              <li className="d-flex align-items-center gap-2">
+                <i className="bi bi-envelope" style={{ color: 'var(--bs-secondary)' }}></i>
                 <a 
                   href="mailto:contacto@arguz.com" 
-                  className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors"
+                  className="text-white-50 text-decoration-none small"
                 >
                   contacto@arguz.com
                 </a>
@@ -103,15 +118,18 @@ export const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-primary-foreground/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-primary-foreground/60">
-            © {new Date().getFullYear()} Arguz Digitalización S.A. de C.V. Todos los derechos reservados.
-          </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-sm text-primary-foreground/60 hover:text-secondary transition-colors">
+        <hr className="my-5 opacity-25" />
+        <div className="row align-items-center">
+          <div className="col-md-6 text-center text-md-start">
+            <p className="small text-white-50 mb-3 mb-md-0">
+              © {new Date().getFullYear()} Arguz Digitalización S.A. de C.V. Todos los derechos reservados.
+            </p>
+          </div>
+          <div className="col-md-6 text-center text-md-end">
+            <a href="#" className="text-white-50 text-decoration-none small me-4">
               Aviso de Privacidad
             </a>
-            <a href="#" className="text-sm text-primary-foreground/60 hover:text-secondary transition-colors">
+            <a href="#" className="text-white-50 text-decoration-none small">
               Términos y Condiciones
             </a>
           </div>
