@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
 
 const navLinks = [
   { name: "Inicio", href: "#inicio" },
@@ -12,7 +10,6 @@ const navLinks = [
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,105 +20,75 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-md py-3"
-          : "bg-transparent py-5"
+    <nav
+      className={`navbar navbar-expand-lg fixed-top py-3 transition ${
+        isScrolled ? "navbar-scrolled navbar-light" : "navbar-dark"
       }`}
+      style={{ transition: "all 0.3s ease" }}
     >
-      <div className="container mx-auto px-4">
-        <nav className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-2">
-            <div className="flex flex-col">
-              <span className={`font-display text-2xl font-bold tracking-tight transition-colors ${
-                isScrolled ? "text-foreground" : "text-primary-foreground"
-              }`}>
-                ARGUZ
-              </span>
-              <span className={`text-xs tracking-widest transition-colors ${
-                isScrolled ? "text-muted-foreground" : "text-primary-foreground/70"
-              }`}>
-                QUE VIVA LA INFORMACIÓN
-              </span>
-            </div>
-          </a>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`font-medium transition-colors hover:text-secondary ${
-                  isScrolled ? "text-foreground" : "text-primary-foreground"
-                }`}
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-4">
-            <a
-              href="tel:+525530042777"
-              className={`flex items-center gap-2 font-medium transition-colors ${
-                isScrolled ? "text-foreground" : "text-primary-foreground"
-              }`}
-            >
-              <Phone className="w-4 h-4" />
-              <span>+52 (55) 3004-2777</span>
-            </a>
-            <Button variant={isScrolled ? "default" : "hero"} size="lg">
-              Cotizar ahora
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+      <div className="container">
+        {/* Logo */}
+        <a className="navbar-brand d-flex flex-column" href="#inicio">
+          <span className="fw-bold fs-4" style={{ fontFamily: 'var(--bs-heading-font)' }}>
+            ARGUZ
+          </span>
+          <small 
+            className="text-uppercase" 
+            style={{ 
+              fontSize: '0.65rem', 
+              letterSpacing: '0.15em',
+              opacity: 0.7 
+            }}
           >
-            {isMobileMenuOpen ? (
-              <X className={`w-6 h-6 ${isScrolled ? "text-foreground" : "text-primary-foreground"}`} />
-            ) : (
-              <Menu className={`w-6 h-6 ${isScrolled ? "text-foreground" : "text-primary-foreground"}`} />
-            )}
-          </button>
-        </nav>
+            Que viva la información
+          </small>
+        </a>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 animate-fade-in">
-            <div className="flex flex-col gap-4 bg-card rounded-xl p-6 shadow-lg">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-foreground font-medium py-2 hover:text-primary transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
+        {/* Mobile toggle */}
+        <button
+          className="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        {/* Nav links */}
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+            {navLinks.map((link) => (
+              <li className="nav-item" key={link.name}>
+                <a className="nav-link px-3 fw-medium" href={link.href}>
                   {link.name}
                 </a>
-              ))}
-              <hr className="border-border" />
-              <a
-                href="tel:+525530042777"
-                className="flex items-center gap-2 text-foreground font-medium"
-              >
-                <Phone className="w-4 h-4" />
-                <span>+52 (55) 3004-2777</span>
-              </a>
-              <Button variant="default" size="lg" className="w-full">
-                Cotizar ahora
-              </Button>
-            </div>
+              </li>
+            ))}
+          </ul>
+
+          {/* CTA */}
+          <div className="d-flex align-items-center gap-3">
+            <a
+              href="tel:+525530042777"
+              className={`d-none d-lg-flex align-items-center gap-2 text-decoration-none ${
+                isScrolled ? "text-dark" : "text-white"
+              }`}
+            >
+              <i className="bi bi-telephone"></i>
+              <span>+52 (55) 3004-2777</span>
+            </a>
+            <a 
+              href="#contacto" 
+              className={`btn ${isScrolled ? 'btn-primary' : 'btn-secondary'}`}
+            >
+              Cotizar ahora
+            </a>
           </div>
-        )}
+        </div>
       </div>
-    </header>
+    </nav>
   );
 };

@@ -1,6 +1,3 @@
-import { CheckCircle2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
 const highlights = [
   "Más de 25 años de trayectoria en digitalización",
   "Cumplimos estándares internacionales de calidad",
@@ -12,83 +9,119 @@ const highlights = [
 
 export const About = () => {
   return (
-    <section id="nosotros" className="py-24 bg-background overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section id="nosotros" className="py-5" style={{ paddingTop: '6rem', paddingBottom: '6rem' }}>
+      <div className="container">
+        <div className="row align-items-center g-5">
           {/* Content */}
-          <div>
-            <span className="inline-block px-4 py-2 rounded-full bg-accent/20 text-accent text-sm font-semibold mb-4">
+          <div className="col-lg-6">
+            <span 
+              className="section-badge"
+              style={{ background: 'rgba(26, 138, 125, 0.15)', color: 'var(--bs-accent)' }}
+            >
               Sobre Nosotros
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <h2 className="display-5 fw-bold mb-4" style={{ fontFamily: 'var(--bs-heading-font)' }}>
               Su socio confiable en{" "}
               <span className="text-gradient">soluciones documentales</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+            <p className="lead text-muted mb-4">
               En Arguz Digitalización, nuestras soluciones van más allá de la transformación 
               de documentos en papel a formato digital. Incluimos asesoría técnica y legal 
               para determinar qué se puede y qué no se debe digitalizar.
             </p>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-muted mb-4">
               Con la finalidad de generar ahorros sustanciales para nuestros clientes, 
               llevamos una gestión documental apegada a los principios de austeridad, 
               honestidad y eficiencia.
             </p>
 
             {/* Highlights */}
-            <div className="grid sm:grid-cols-2 gap-3 mb-8">
+            <div className="row g-3 mb-4">
               {highlights.map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0" />
-                  <span className="text-foreground text-sm">{item}</span>
+                <div key={index} className="col-sm-6">
+                  <div className="d-flex align-items-center gap-2">
+                    <i className="bi bi-check-circle-fill" style={{ color: 'var(--bs-secondary)' }}></i>
+                    <span className="small">{item}</span>
+                  </div>
                 </div>
               ))}
             </div>
 
-            <Button variant="default" size="lg">
+            <a href="#contacto" className="btn btn-primary btn-lg">
               Conocer más sobre Arguz
-            </Button>
+            </a>
           </div>
 
           {/* Visual */}
-          <div className="relative">
-            {/* Main card */}
-            <div className="relative bg-card rounded-3xl p-8 shadow-lg border border-border">
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-secondary/20 rounded-full blur-2xl" />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
-              
-              <div className="relative z-10">
-                <h3 className="font-display text-2xl font-bold text-foreground mb-4">
-                  2025: Año de nuevas transformaciones
-                </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Arguz ofrece soluciones integrales, sofisticadas y escalables que mejoran 
-                  enormemente la forma en que las empresas procesan, archivan y comparten 
-                  los documentos digitales y de papel.
-                </p>
+          <div className="col-lg-6">
+            <div className="position-relative">
+              {/* Main card */}
+              <div className="about-card">
+                {/* Decorative blobs */}
+                <div 
+                  className="position-absolute"
+                  style={{ 
+                    top: '-1rem', 
+                    right: '-1rem', 
+                    width: '6rem', 
+                    height: '6rem',
+                    background: 'rgba(212, 160, 23, 0.2)',
+                    borderRadius: '50%',
+                    filter: 'blur(30px)'
+                  }}
+                ></div>
+                <div 
+                  className="position-absolute"
+                  style={{ 
+                    bottom: '-1.5rem', 
+                    left: '-1.5rem', 
+                    width: '8rem', 
+                    height: '8rem',
+                    background: 'rgba(13, 74, 140, 0.1)',
+                    borderRadius: '50%',
+                    filter: 'blur(30px)'
+                  }}
+                ></div>
 
-                {/* Stats */}
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="text-center p-4 bg-muted rounded-xl">
-                    <div className="font-display text-3xl font-bold text-primary mb-1">25+</div>
-                    <div className="text-xs text-muted-foreground">Años</div>
-                  </div>
-                  <div className="text-center p-4 bg-muted rounded-xl">
-                    <div className="font-display text-3xl font-bold text-primary mb-1">30+</div>
-                    <div className="text-xs text-muted-foreground">Equipos</div>
-                  </div>
-                  <div className="text-center p-4 bg-muted rounded-xl">
-                    <div className="font-display text-3xl font-bold text-primary mb-1">200</div>
-                    <div className="text-xs text-muted-foreground">Hojas/min</div>
+                <div className="position-relative">
+                  <h3 className="h4 fw-bold mb-3" style={{ fontFamily: 'var(--bs-heading-font)' }}>
+                    2025: Año de nuevas transformaciones
+                  </h3>
+                  <p className="text-muted mb-4">
+                    Arguz ofrece soluciones integrales, sofisticadas y escalables que mejoran 
+                    enormemente la forma en que las empresas procesan, archivan y comparten 
+                    los documentos digitales y de papel.
+                  </p>
+
+                  {/* Stats */}
+                  <div className="row g-3">
+                    <div className="col-4">
+                      <div className="stat-box">
+                        <div className="stat-number">25+</div>
+                        <div className="text-muted small">Años</div>
+                      </div>
+                    </div>
+                    <div className="col-4">
+                      <div className="stat-box">
+                        <div className="stat-number">30+</div>
+                        <div className="text-muted small">Equipos</div>
+                      </div>
+                    </div>
+                    <div className="col-4">
+                      <div className="stat-box">
+                        <div className="stat-number">200</div>
+                        <div className="text-muted small">Hojas/min</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Floating badge */}
-            <div className="absolute -bottom-4 -right-4 lg:-right-8 bg-primary text-primary-foreground rounded-2xl px-6 py-4 shadow-glow">
-              <div className="font-display text-lg font-bold">ISO-27000</div>
-              <div className="text-xs text-primary-foreground/80">Certificación</div>
+              {/* Floating badge */}
+              <div className="floating-badge d-none d-md-block">
+                <div className="fw-bold" style={{ fontFamily: 'var(--bs-heading-font)' }}>ISO-27000</div>
+                <div className="small opacity-75">Certificación</div>
+              </div>
             </div>
           </div>
         </div>
