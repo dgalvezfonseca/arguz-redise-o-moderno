@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arguz Digitalización | Gestión Documental y Digitalización de Documentos</title>
+  <meta name="description" content="Empresa mexicana especializada en digitalización de documentos, gestión documental, consultoría archivística y respaldo de información. Más de 25 años de experiencia.">
+  <meta name="keywords" content="digitalización de documentos, gestión documental, consultoría archivística, respaldo de información, México, archivo digital">
+  <link rel="canonical" href="https://arguz.com">
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Arguz Brand Colors */
+      --arguz-primary: #0d3a6e;
+      --arguz-primary-light: #1a5a9e;
+      --arguz-primary-dark: #082548;
+      --arguz-secondary: #d4a017;
+      --arguz-secondary-light: #e8b82a;
+      --arguz-accent: #2a8a8a;
+      --arguz-light: #f8fafc;
+      --arguz-dark: #1e293b;
+      --arguz-muted: #64748b;
+      
+      /* Fonts */
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      
+      /* Shadows */
+      --shadow-sm: 0 2px 8px -2px rgba(13, 58, 110, 0.08);
+      --shadow-md: 0 8px 24px -8px rgba(13, 58, 110, 0.12);
+      --shadow-lg: 0 20px 50px -15px rgba(13, 58, 110, 0.15);
+      --shadow-gold: 0 8px 30px -8px rgba(212, 160, 23, 0.3);
+    }
+    
+    body {
+      font-family: var(--font-body);
+      color: var(--arguz-dark);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+    }
+    
+    /* Navbar */
+    .navbar-arguz {
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-arguz.scrolled {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .navbar-brand-text {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .navbar-brand-tagline {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      opacity: 0.7;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, var(--arguz-primary-dark) 0%, var(--arguz-primary) 50%, var(--arguz-accent) 100%);
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50px;
+      font-size: 0.875rem;
+      color: white;
+    }
+    
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--arguz-secondary);
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      animation: pulse 2s infinite;
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, var(--arguz-secondary) 0%, var(--arguz-secondary-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .btn-hero {
+      background: var(--arguz-secondary);
+      color: var(--arguz-dark);
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow-gold);
+      border: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-hero:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px -8px rgba(212, 160, 23, 0.4);
+      background: var(--arguz-secondary-light);
+      color: var(--arguz-dark);
+    }
+    
+    .btn-hero-outline {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-hero-outline:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+      color: white;
+    }
+    
+    .feature-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+      color: white;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    
+    .feature-pill i {
+      color: var(--arguz-secondary);
+    }
+    
+    /* Section Styles */
+    .section-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(13, 58, 110, 0.1);
+      color: var(--arguz-primary);
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+    
+    .section-badge-gold {
+      background: rgba(212, 160, 23, 0.15);
+      color: var(--arguz-dark);
+    }
+    
+    /* Service Cards */
+    .card-service {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .card-service:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(13, 58, 110, 0.2);
+      transform: translateY(-5px);
+    }
+    
+    .icon-box {
+      width: 56px;
+      height: 56px;
+      background: rgba(13, 58, 110, 0.1);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .icon-box i {
+      font-size: 1.5rem;
+      color: var(--arguz-primary);
+      transition: all 0.3s ease;
+    }
+    
+    .card-service:hover .icon-box {
+      background: var(--arguz-primary);
+      transform: scale(1.1);
+    }
+    
+    .card-service:hover .icon-box i {
+      color: white;
+    }
+    
+    .feature-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--arguz-secondary);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    
+    /* Benefit Cards */
+    .card-benefit {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .card-benefit:hover {
+      box-shadow: var(--shadow-md);
+    }
+    
+    .card-benefit:hover .icon-box {
+      background: var(--arguz-primary);
+    }
+    
+    .card-benefit:hover .icon-box i {
+      color: white;
+    }
+    
+    .stat-number {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--arguz-primary);
+    }
+    
+    /* About Section */
+    .about-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 150px;
+      height: 150px;
+      background: rgba(212, 160, 23, 0.1);
+      border-radius: 50%;
+      filter: blur(40px);
+    }
+    
+    .stat-box {
+      text-align: center;
+      padding: 1rem;
+      background: var(--arguz-light);
+      border-radius: 0.75rem;
+    }
+    
+    .badge-certification {
+      position: absolute;
+      bottom: -1rem;
+      right: -1rem;
+      background: var(--arguz-primary);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* Contact Section */
+    .contact-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .contact-icon-box {
+      width: 48px;
+      height: 48px;
+      background: rgba(13, 58, 110, 0.1);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .contact-icon-box i {
+      font-size: 1.25rem;
+      color: var(--arguz-primary);
+    }
+    
+    .form-control, .form-select {
+      padding: 0.875rem 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s ease;
+    }
+    
+    .form-control:focus, .form-select:focus {
+      border-color: var(--arguz-primary);
+      box-shadow: 0 0 0 3px rgba(13, 58, 110, 0.1);
+    }
+    
+    .btn-primary-arguz {
+      background: var(--arguz-primary);
+      color: white;
+      font-weight: 600;
+      padding: 0.875rem 1.5rem;
+      border-radius: 0.5rem;
+      border: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary-arguz:hover {
+      background: var(--arguz-primary-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    /* Footer */
+    .footer-arguz {
+      background: var(--arguz-primary);
+      color: white;
+    }
+    
+    .footer-arguz a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-arguz a:hover {
+      color: var(--arguz-secondary);
+    }
+    
+    /* Animations */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-slide-up {
+      animation: slideUp 0.6s ease-out forwards;
+    }
+    
+    .animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
+    
+    /* Floating elements */
+    .floating-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 991.98px) {
+      .hero-section {
+        padding-top: 100px;
+        min-height: auto;
+        padding-bottom: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-arguz py-3" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand d-flex flex-column" href="#inicio">
+        <span class="navbar-brand-text text-white">ARGUZ</span>
+        <span class="navbar-brand-tagline text-white-50">QUE VIVA LA INFORMACIÓN</span>
+      </a>
+      
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white px-3" href="#inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white px-3" href="#servicios">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white px-3" href="#beneficios">Beneficios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white px-3" href="#nosotros">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white px-3" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+        
+        <div class="d-flex align-items-center gap-3">
+          <a href="tel:+525530042777" class="text-white text-decoration-none d-none d-lg-flex align-items-center gap-2">
+            <i class="bi bi-telephone"></i>
+            <span>+52 (55) 3004-2777</span>
+          </a>
+          <a href="#contacto" class="btn btn-hero">Cotizar ahora</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="inicio" class="hero-section d-flex align-items-center">
+    <!-- Floating circles -->
+    <div class="floating-circle" style="width: 300px; height: 300px; background: rgba(212, 160, 23, 0.2); top: 80px; right: 50px;"></div>
+    <div class="floating-circle" style="width: 400px; height: 400px; background: rgba(42, 138, 138, 0.1); bottom: 80px; left: 50px; animation-delay: 2s;"></div>
+    
+    <div class="container position-relative" style="z-index: 10;">
+      <div class="row">
+        <div class="col-lg-10 col-xl-8">
+          <!-- Badge -->
+          <div class="animate-slide-up mb-4">
+            <span class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Empresa mexicana con más de 25 años de experiencia
+            </span>
+          </div>
+          
+          <!-- Heading -->
+          <h1 class="display-3 fw-bold text-white mb-4 animate-slide-up animate-delay-1" style="line-height: 1.1;">
+            Gestión Documental, <span class="text-gradient">Archivística</span> y Digitalización de Documentos
+          </h1>
+          
+          <!-- Subheading -->
+          <p class="lead text-white-50 mb-5 animate-slide-up animate-delay-2" style="max-width: 700px;">
+            Especialistas en servicios de digitalización de documentos en grandes volúmenes. 
+            Transformamos su archivo físico en información digital segura y accesible.
+          </p>
+          
+          <!-- CTA Buttons -->
+          <div class="d-flex flex-wrap gap-3 mb-5 animate-slide-up animate-delay-3">
+            <a href="#contacto" class="btn btn-hero btn-lg">
+              Solicitar cotización
+              <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+            <a href="#servicios" class="btn btn-hero-outline btn-lg">
+              Conocer servicios
+            </a>
+          </div>
+          
+          <!-- Features -->
+          <div class="row g-3 animate-slide-up animate-delay-4">
+            <div class="col-6 col-md-3">
+              <div class="feature-pill">
+                <i class="bi bi-file-earmark-text fs-5"></i>
+                <span>Consultoría Archivística</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="feature-pill">
+                <i class="bi bi-pc-display fs-5"></i>
+                <span>Digitalización</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="feature-pill">
+                <i class="bi bi-shield-check fs-5"></i>
+                <span>Respaldo</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="feature-pill">
+                <i class="bi bi-clock-history fs-5"></i>
+                <span>Gestión Documental</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom gradient -->
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 120px; background: linear-gradient(to top, #f8fafc, transparent);"></div>
+  </section>
+
+  <!-- ========== SERVICES SECTION ========== -->
+  <section id="servicios" class="py-5" style="padding-top: 6rem; padding-bottom: 6rem; background: #f8fafc;">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+        <span class="section-badge">Nuestros Servicios</span>
+        <h2 class="display-5 fw-bold mb-3">
+          Incrementa tu productividad con <span class="text-gradient">nuestras soluciones</span>
+        </h2>
+        <p class="lead text-muted">
+          Soluciones integrales, sofisticadas y escalables que mejoran la forma 
+          en que las empresas procesan, archivan y comparten documentos.
+        </p>
+      </div>
+      
+      <!-- Services Grid -->
+      <div class="row g-4">
+        <!-- Service 1 -->
+        <div class="col-md-6">
+          <div class="card-service">
+            <div class="icon-box mb-4">
+              <i class="bi bi-search"></i>
+            </div>
+            <h3 class="h4 fw-bold mb-3">Consultoría Archivística</h3>
+            <p class="text-muted mb-4">
+              Ofrecemos herramientas y asesoría técnica para la correcta administración de sus archivos, 
+              incluyendo orientación legal sobre qué documentos pueden digitalizarse.
+            </p>
+            <ul class="list-unstyled mb-4">
+              <li class="d-flex align-items-center gap-2 mb-2">
+                <span class="feature-dot"></span>
+                <span>Diagnóstico de archivos</span>
+              </li>
+              <li class="d-flex align-items-center gap-2 mb-2">
+                <span class="feature-dot"></span>
+                <span>Asesoría legal</span>
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <span class="feature-dot"></span>
+                <span>Plan de gestión</span>
+              </li>
+            </ul>
+            <a href="#contacto" class="text-decoration-none fw-semibold" style="color: var(--arguz-primary);">
+              Conocer más <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="col-md-6">
+          <div class="card-service">
+            <div class="icon-box mb-4">
+              <i class="bi bi-pc-display"></i>
+            </div>
+            <h3 class="h4 fw-bold mb-3">Digitalización de Documentos</h3>
+            <p class="text-muted mb-4">
+              Transformamos sus documentos físicos a formatos digitales con tecnología de vanguardia, 
+              utilizando escáneres Kodak Alaris de alto volumen.
+            </p>
+            <ul class="list-unstyled mb-4">
+              <li class="d-flex align-items-center gap-2 mb-2">
+                <span class="feature-dot"></span>
+                <span>Escaneo de alta calidad</span>
+              </li>
+              <li class="d-flex align-items-center gap-2 mb-2">
+                <span class="feature-dot"></span>
+                <span>OCR avanzado</span>
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <span class="feature-dot"></span>
+                <span>Indexación inteligente</span>
+              </li>
+            </ul>
+            <a href="#contacto" class="text-decoration-none fw-semibold" style="color: var(--arguz-primary);">
+              Conocer más <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="col-md-6">
+          <div class="card-service">
+            <div class="icon-box mb-4">
+              <i class="bi bi-database"></i>
+            </div>
+            <h3 class="h4 fw-bold mb-3">Gestión Documental</h3>
+            <p class="text-muted mb-4">
+              Sistema integral para organizar documentos físicos y digitales, con flujos de trabajo 
+              automatizados y acceso desde cualquier ubicación.
+            </p>
+            <ul class="list-unstyled mb-4">
+              <li class="d-flex align-items-center gap-2 mb-2">
+                <span class="feature-dot"></span>
+                <span>Laserfiche</span>
+              </li>
+              <li class="d-flex align-items-center gap-2 mb-2">
+                <span class="feature-dot"></span>
+                <span>Acceso remoto</span>
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <span class="feature-dot"></span>
+                <span>Automatización</span>
+              </li>
+            </ul>
+            <a href="#contacto" class="text-decoration-none fw-semibold" style="color: var(--arguz-primary);">
+              Conocer más <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="col-md-6">
+          <div class="card-service">
+            <div class="icon-box mb-4">
+              <i class="bi bi-cloud-arrow-up"></i>
+            </div>
+            <h3 class="h4 fw-bold mb-3">Respaldo de Información</h3>
+            <p class="text-muted mb-4">
+              Solución completa de respaldos en la nube para PCs, laptops, servidores 
+              y dispositivos móviles con tecnología Synology.
+            </p>
+            <ul class="list-unstyled mb-4">
+              <li class="d-flex align-items-center gap-2 mb-2">
+                <span class="feature-dot"></span>
+                <span>Backup automático</span>
+              </li>
+              <li class="d-flex align-items-center gap-2 mb-2">
+                <span class="feature-dot"></span>
+                <span>Recuperación rápida</span>
+              </li>
+              <li class="d-flex align-items-center gap-2">
+                <span class="feature-dot"></span>
+                <span>Seguridad total</span>
+              </li>
+            </ul>
+            <a href="#contacto" class="text-decoration-none fw-semibold" style="color: var(--arguz-primary);">
+              Conocer más <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BENEFITS SECTION ========== -->
+  <section id="beneficios" class="py-5" style="padding-top: 6rem; padding-bottom: 6rem; background: white;">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+        <span class="section-badge section-badge-gold">Beneficios Arguz</span>
+        <h2 class="display-5 fw-bold mb-3">
+          Eficienta tu proceso de <span class="text-gradient">consulta documental</span>
+        </h2>
+        <p class="lead text-muted">
+          Reducción de tiempo en la solicitud de documentos y ahorro en la manutención del documento físico.
+        </p>
+      </div>
+      
+      <!-- Benefits Grid -->
+      <div class="row g-4">
+        <!-- Benefit 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-benefit">
+            <div class="d-flex gap-3">
+              <div class="icon-box flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-people fs-5"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h3 class="h5 fw-bold mb-2">Personal Calificado</h3>
+                <p class="text-muted small mb-3">
+                  Todo nuestro personal está capacitado para brindarle el mejor apoyo dentro de su proyecto.
+                </p>
+                <div class="d-flex align-items-baseline gap-2">
+                  <span class="stat-number">25+</span>
+                  <span class="text-muted small">años de experiencia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Benefit 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-benefit">
+            <div class="d-flex gap-3">
+              <div class="icon-box flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-graph-up-arrow fs-5"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h3 class="h5 fw-bold mb-2">Aumento de Productividad</h3>
+                <p class="text-muted small mb-3">
+                  Creamos soluciones escalables para eficientar la búsqueda y gestión de documentos.
+                </p>
+                <div class="d-flex align-items-baseline gap-2">
+                  <span class="stat-number">88%</span>
+                  <span class="text-muted small">menos espacio físico</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Benefit 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-benefit">
+            <div class="d-flex gap-3">
+              <div class="icon-box flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-shield-check fs-5"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h3 class="h5 fw-bold mb-2">Programa Anti-Desastre</h3>
+                <p class="text-muted small mb-3">
+                  Tecnología y equipos de alto desempeño para garantizar la seguridad de su información.
+                </p>
+                <div class="d-flex align-items-baseline gap-2">
+                  <span class="stat-number">30+</span>
+                  <span class="text-muted small">escáneres de alto volumen</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Benefit 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-benefit">
+            <div class="d-flex gap-3">
+              <div class="icon-box flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-lightning fs-5"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h3 class="h5 fw-bold mb-2">Acceso Inmediato</h3>
+                <p class="text-muted small mb-3">
+                  Encuentre y consulte archivos digitales en segundos desde cualquier ubicación.
+                </p>
+                <div class="d-flex align-items-baseline gap-2">
+                  <span class="stat-number">95%</span>
+                  <span class="text-muted small">reducción de pérdidas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Benefit 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-benefit">
+            <div class="d-flex gap-3">
+              <div class="icon-box flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-search fs-5"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h3 class="h5 fw-bold mb-2">Búsqueda Inteligente</h3>
+                <p class="text-muted small mb-3">
+                  Motor OCR avanzado para localizar documentos mediante búsqueda de palabras.
+                </p>
+                <div class="d-flex align-items-baseline gap-2">
+                  <span class="stat-number">200</span>
+                  <span class="text-muted small">hojas por minuto</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Benefit 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card-benefit">
+            <div class="d-flex gap-3">
+              <div class="icon-box flex-shrink-0" style="width: 48px; height: 48px;">
+                <i class="bi bi-share fs-5"></i>
+              </div>
+              <div class="flex-grow-1">
+                <h3 class="h5 fw-bold mb-2">Colaboración Remota</h3>
+                <p class="text-muted small mb-3">
+                  Comparta documentos electrónicamente y agilice el trabajo en equipo.
+                </p>
+                <div class="d-flex align-items-baseline gap-2">
+                  <span class="stat-number">100%</span>
+                  <span class="text-muted small">acceso remoto</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="nosotros" class="py-5" style="padding-top: 6rem; padding-bottom: 6rem; background: #f8fafc;">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <!-- Content -->
+        <div class="col-lg-6">
+          <span class="section-badge" style="background: rgba(42, 138, 138, 0.15); color: var(--arguz-accent);">
+            Sobre Nosotros
+          </span>
+          <h2 class="display-5 fw-bold mb-4">
+            Su socio confiable en <span class="text-gradient">soluciones documentales</span>
+          </h2>
+          <p class="lead text-muted mb-4">
+            En Arguz Digitalización, nuestras soluciones van más allá de la transformación 
+            de documentos en papel a formato digital. Incluimos asesoría técnica y legal 
+            para determinar qué se puede y qué no se debe digitalizar.
+          </p>
+          <p class="text-muted mb-4">
+            Con la finalidad de generar ahorros sustanciales para nuestros clientes, 
+            llevamos una gestión documental apegada a los principios de austeridad, 
+            honestidad y eficiencia.
+          </p>
+          
+          <!-- Highlights -->
+          <div class="row g-3 mb-4">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill" style="color: var(--arguz-secondary);"></i>
+                <span class="small">Más de 25 años de trayectoria</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill" style="color: var(--arguz-secondary);"></i>
+                <span class="small">Estándares internacionales</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill" style="color: var(--arguz-secondary);"></i>
+                <span class="small">Asesoría técnica y legal</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill" style="color: var(--arguz-secondary);"></i>
+                <span class="small">Normas ISO-27000</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill" style="color: var(--arguz-secondary);"></i>
+                <span class="small">Equipos Kodak Alaris</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill" style="color: var(--arguz-secondary);"></i>
+                <span class="small">Soluciones personalizadas</span>
+              </div>
+            </div>
+          </div>
+          
+          <a href="#contacto" class="btn btn-primary-arguz btn-lg">
+            Conocer más sobre Arguz
+          </a>
+        </div>
+        
+        <!-- Visual -->
+        <div class="col-lg-6">
+          <div class="about-card position-relative">
+            <h3 class="h4 fw-bold mb-3">2025: Año de nuevas transformaciones</h3>
+            <p class="text-muted mb-4">
+              Arguz ofrece soluciones integrales, sofisticadas y escalables que mejoran 
+              enormemente la forma en que las empresas procesan, archivan y comparten 
+              los documentos digitales y de papel.
+            </p>
+            
+            <!-- Stats -->
+            <div class="row g-3">
+              <div class="col-4">
+                <div class="stat-box">
+                  <div class="stat-number">25+</div>
+                  <div class="small text-muted">Años</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-box">
+                  <div class="stat-number">30+</div>
+                  <div class="small text-muted">Equipos</div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="stat-box">
+                  <div class="stat-number">200</div>
+                  <div class="small text-muted">Hojas/min</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Badge -->
+            <div class="badge-certification">
+              <div class="fw-bold">ISO-27000</div>
+              <div class="small opacity-75">Certificación</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contacto" class="py-5" style="padding-top: 6rem; padding-bottom: 6rem; background: white;">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Contact Info -->
+        <div class="col-lg-6">
+          <span class="section-badge">Contacto</span>
+          <h2 class="display-5 fw-bold mb-4">
+            ¿Listo para <span class="text-gradient">transformar</span> tu gestión documental?
+          </h2>
+          <p class="lead text-muted mb-5">
+            Contáctanos hoy mismo y descubre cómo podemos ayudarte a optimizar 
+            tu archivo documental. Nuestro equipo está listo para asesorarte.
+          </p>
+          
+          <!-- Contact Details -->
+          <div class="d-flex flex-column gap-4">
+            <div class="d-flex align-items-start gap-3">
+              <div class="contact-icon-box">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div>
+                <h5 class="fw-semibold mb-1">Dirección</h5>
+                <p class="text-muted mb-0">
+                  Av. Miguel Hidalgo 24-B, Lago de Gpe,<br>
+                  Cuautitlán Izcalli, Estado de México, México
+                </p>
+              </div>
+            </div>
+            
+            <div class="d-flex align-items-start gap-3">
+              <div class="contact-icon-box">
+                <i class="bi bi-telephone"></i>
+              </div>
+              <div>
+                <h5 class="fw-semibold mb-1">Teléfono</h5>
+                <a href="tel:+525530042777" class="text-muted text-decoration-none">
+                  +52 (55) 3004-2777
+                </a>
+              </div>
+            </div>
+            
+            <div class="d-flex align-items-start gap-3">
+              <div class="contact-icon-box">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <div>
+                <h5 class="fw-semibold mb-1">Email</h5>
+                <a href="mailto:contacto@arguz.com" class="text-muted text-decoration-none">
+                  contacto@arguz.com
+                </a>
+              </div>
+            </div>
+            
+            <div class="d-flex align-items-start gap-3">
+              <div class="contact-icon-box">
+                <i class="bi bi-clock"></i>
+              </div>
+              <div>
+                <h5 class="fw-semibold mb-1">Horario</h5>
+                <p class="text-muted mb-0">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="col-lg-6">
+          <div class="contact-card">
+            <h3 class="h4 fw-bold mb-4">Solicita tu cotización</h3>
+            
+            <form>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="name" class="form-label small fw-medium">Nombre completo</label>
+                  <input type="text" class="form-control" id="name" placeholder="Tu nombre" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="company" class="form-label small fw-medium">Empresa</label>
+                  <input type="text" class="form-control" id="company" placeholder="Nombre de tu empresa">
+                </div>
+                <div class="col-sm-6">
+                  <label for="email" class="form-label small fw-medium">Correo electrónico</label>
+                  <input type="email" class="form-control" id="email" placeholder="tu@email.com" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="phone" class="form-label small fw-medium">Teléfono</label>
+                  <input type="tel" class="form-control" id="phone" placeholder="+52 (55) 1234-5678">
+                </div>
+                <div class="col-12">
+                  <label for="service" class="form-label small fw-medium">Servicio de interés</label>
+                  <select class="form-select" id="service" required>
+                    <option value="">Selecciona un servicio</option>
+                    <option value="digitalizacion">Digitalización de Documentos</option>
+                    <option value="consultoria">Consultoría Archivística</option>
+                    <option value="gestion">Gestión Documental</option>
+                    <option value="respaldo">Respaldo de Información</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label small fw-medium">Mensaje</label>
+                  <textarea class="form-control" id="message" rows="4" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary-arguz w-100">
+                    Enviar mensaje
+                    <i class="bi bi-send ms-2"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer-arguz py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Brand -->
+        <div class="col-lg-3">
+          <div class="mb-4">
+            <span class="navbar-brand-text fs-4">ARGUZ</span>
+            <p class="small opacity-75 mt-1" style="letter-spacing: 0.1em;">QUE VIVA LA INFORMACIÓN</p>
+          </div>
+          <p class="small opacity-75">
+            Su socio confiable para soluciones totales en procesos documentales. 
+            Más de 25 años transformando la gestión de información.
+          </p>
+        </div>
+        
+        <!-- Services -->
+        <div class="col-sm-6 col-lg-3">
+          <h5 class="fw-bold mb-3">Servicios</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#servicios">Digitalización de Documentos</a></li>
+            <li class="mb-2"><a href="#servicios">Consultoría Archivística</a></li>
+            <li class="mb-2"><a href="#servicios">Gestión Documental</a></li>
+            <li class="mb-2"><a href="#servicios">Respaldo de Información</a></li>
+            <li><a href="#servicios">Digitalización para PyMes</a></li>
+          </ul>
+        </div>
+        
+        <!-- Links -->
+        <div class="col-sm-6 col-lg-2">
+          <h5 class="fw-bold mb-3">Enlaces</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#inicio">Inicio</a></li>
+            <li class="mb-2"><a href="#servicios">Servicios</a></li>
+            <li class="mb-2"><a href="#beneficios">Beneficios</a></li>
+            <li class="mb-2"><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact -->
+        <div class="col-lg-4">
+          <h5 class="fw-bold mb-3">Contacto</h5>
+          <ul class="list-unstyled">
+            <li class="d-flex align-items-start gap-2 mb-3">
+              <i class="bi bi-geo-alt" style="color: var(--arguz-secondary);"></i>
+              <span class="small opacity-75">
+                Av. Miguel Hidalgo 24-B, Lago de Gpe,<br>
+                Cuautitlán Izcalli, EdoMex, México
+              </span>
+            </li>
+            <li class="d-flex align-items-center gap-2 mb-3">
+              <i class="bi bi-telephone" style="color: var(--arguz-secondary);"></i>
+              <a href="tel:+525530042777" class="small">+52 (55) 3004-2777</a>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-envelope" style="color: var(--arguz-secondary);"></i>
+              <a href="mailto:contacto@arguz.com" class="small">contacto@arguz.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Bottom bar -->
+      <hr class="my-4 opacity-25">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="small opacity-50 mb-0">
+            © 2025 Arguz Digitalización S.A. de C.V. Todos los derechos reservados.
+          </p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="#" class="small me-3">Aviso de Privacidad</a>
+          <a href="#" class="small">Términos y Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Navbar scroll effect -->
+  <script>
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('mainNavbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+        navbar.classList.remove('navbar-dark');
+        navbar.classList.add('navbar-light');
+        navbar.querySelectorAll('.nav-link, .navbar-brand-text, .navbar-brand-tagline').forEach(el => {
+          el.classList.remove('text-white', 'text-white-50');
+        });
+      } else {
+        navbar.classList.remove('scrolled');
+        navbar.classList.remove('navbar-light');
+        navbar.classList.add('navbar-dark');
+        navbar.querySelectorAll('.nav-link, .navbar-brand-text').forEach(el => {
+          el.classList.add('text-white');
+        });
+        navbar.querySelector('.navbar-brand-tagline').classList.add('text-white-50');
+      }
+    });
+  </script>
+</body>
+</html>
