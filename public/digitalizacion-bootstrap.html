@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digitalización de Documentos | Arguz Digitalización</title>
+  <meta name="description" content="Servicio profesional de digitalización de documentos. Transformamos archivos físicos a formatos digitales con tecnología Kodak Alaris y más de 25 años de experiencia.">
+  <meta name="keywords" content="digitalización de documentos, escaneo documental, gestión documental, Kodak Alaris, archivo digital, México">
+  <link rel="canonical" href="https://arguz.com/digitalizacion-de-documentos">
+  
+  <!-- 
+    NOTA PARA BOOTSTRAP STUDIO:
+    1. Descarga Bootstrap 5.3.3 desde https://getbootstrap.com/docs/5.3/getting-started/download/
+    2. Descarga Bootstrap Icons desde https://icons.getbootstrap.com/
+    3. Incluye los archivos CSS localmente en tu proyecto
+  -->
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bs-primary: #0d4a8c;
+      --bs-secondary: #c9a227;
+      --bs-accent: #1a5a9e;
+      --bs-heading-font: 'Plus Jakarta Sans', sans-serif;
+      --bs-body-font: 'DM Sans', sans-serif;
+    }
+    
+    body {
+      font-family: var(--bs-body-font);
+      color: #1a1a2e;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--bs-heading-font);
+      font-weight: 700;
+    }
+    
+    .btn-primary {
+      background: var(--bs-primary);
+      border-color: var(--bs-primary);
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+    }
+    
+    .btn-primary:hover {
+      background: #0a3d75;
+      border-color: #0a3d75;
+    }
+    
+    .btn-secondary {
+      background: var(--bs-secondary);
+      border-color: var(--bs-secondary);
+      color: #1a1a2e;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+    }
+    
+    .btn-secondary:hover {
+      background: #b8911f;
+      border-color: #b8911f;
+      color: #1a1a2e;
+    }
+    
+    .btn-outline-light {
+      border-width: 2px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, var(--bs-primary) 0%, #1a5a9e 50%, #0d4a8c 100%);
+      min-height: 70vh;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border-radius: 50rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, var(--bs-primary), var(--bs-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-service {
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+      background: white;
+    }
+    
+    .card-service:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    
+    .card-benefit {
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+      background: white;
+    }
+    
+    .card-benefit:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    
+    .icon-box {
+      width: 50px;
+      height: 50px;
+      background: rgba(13, 74, 140, 0.1);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bs-primary);
+    }
+    
+    .stat-box {
+      background: rgba(13, 74, 140, 0.05);
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+    }
+    
+    .stat-number {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--bs-primary);
+    }
+    
+    .navbar-scrolled {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    .footer-dark {
+      background: #1a1a2e;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .animate-slide-up {
+      animation: slideUp 0.8s ease forwards;
+    }
+    
+    .animate-slide-up-1 {
+      animation: slideUp 0.8s ease 0.1s forwards;
+      opacity: 0;
+    }
+    
+    .animate-slide-up-2 {
+      animation: slideUp 0.8s ease 0.2s forwards;
+      opacity: 0;
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand d-flex flex-column" href="index.html">
+        <span class="fw-bold fs-4">ARGUZ</span>
+        <small class="text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.15em; opacity: 0.7;">Que viva la información</small>
+      </a>
+      
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link px-3 fw-medium" href="arguz-bootstrap.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link px-3 fw-medium" href="arguz-bootstrap.html#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link px-3 fw-medium" href="arguz-bootstrap.html#beneficios">Beneficios</a></li>
+          <li class="nav-item"><a class="nav-link px-3 fw-medium" href="arguz-bootstrap.html#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link px-3 fw-medium" href="#contacto">Contacto</a></li>
+        </ul>
+        
+        <div class="d-flex align-items-center gap-3">
+          <a href="tel:+525530042777" class="d-none d-lg-flex align-items-center gap-2 text-decoration-none text-white">
+            <i class="bi bi-telephone"></i>
+            <span>+52 (55) 3004-2777</span>
+          </a>
+          <a href="#contacto" class="btn btn-secondary">Cotizar ahora</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section d-flex align-items-center" style="padding-top: 120px; padding-bottom: 80px;">
+    <div class="container position-relative" style="z-index: 10;">
+      <div class="row align-items-center">
+        <div class="col-lg-8 mx-auto text-center text-white">
+          <span class="section-badge" style="background: rgba(255,255,255,0.15); color: white; backdrop-filter: blur(10px);">
+            <i class="bi bi-display me-2"></i>
+            Servicio Especializado
+          </span>
+          
+          <h1 class="display-4 fw-bold mb-4 animate-slide-up">
+            Digitalización de Documentos
+          </h1>
+          
+          <p class="lead mb-4 animate-slide-up-1" style="opacity: 0.9;">
+            Transformamos información física en formatos digitales con tecnología avanzada, 
+            cumpliendo los más altos estándares internacionales para optimizar tu gestión documental.
+          </p>
+          
+          <div class="d-flex flex-wrap gap-3 justify-content-center animate-slide-up-2">
+            <a href="#contacto" class="btn btn-secondary btn-lg">
+              <i class="bi bi-chat-dots me-2"></i>
+              Solicitar cotización
+            </a>
+            <a href="#proceso" class="btn btn-outline-light btn-lg">
+              <i class="bi bi-arrow-down me-2"></i>
+              Ver proceso
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="position-absolute bottom-0 start-0 end-0" style="height: 150px; background: linear-gradient(to top, white, transparent);"></div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="py-5" style="padding-top: 5rem; padding-bottom: 5rem;">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="section-badge" style="background: rgba(13, 74, 140, 0.1); color: var(--bs-primary);">
+            +25 años de experiencia
+          </span>
+          <h2 class="display-5 fw-bold mb-4">
+            Experiencia y <span class="text-gradient">soluciones avanzadas</span>
+          </h2>
+          <p class="lead text-muted mb-4">
+            Con más de 25 años de trayectoria, <strong>Arguz Digitalización</strong> ofrece 
+            soluciones innovadoras para convertir archivos físicos en documentos digitales.
+          </p>
+          <p class="text-muted mb-4">
+            Optimizamos la gestión documental y garantizamos la protección de la información, 
+            proporcionando tecnologías eficientes que mejoran la accesibilidad a los datos y 
+            se adaptan a las necesidades específicas de cada cliente.
+          </p>
+          <div class="d-flex gap-4">
+            <div class="stat-box text-center">
+              <div class="stat-number">25+</div>
+              <div class="small text-muted">Años</div>
+            </div>
+            <div class="stat-box text-center">
+              <div class="stat-number">1M+</div>
+              <div class="small text-muted">Documentos</div>
+            </div>
+            <div class="stat-box text-center">
+              <div class="stat-number">500+</div>
+              <div class="small text-muted">Clientes</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card card-service p-4 text-center">
+            <div class="card-body">
+              <div class="rounded-3 mb-4 d-flex align-items-center justify-content-center mx-auto" style="width: 120px; height: 120px; background: linear-gradient(135deg, var(--bs-primary), var(--bs-secondary));">
+                <i class="bi bi-cpu fs-1 text-white"></i>
+              </div>
+              <h4 class="fw-bold mb-3">Tecnología de vanguardia</h4>
+              <p class="text-muted mb-4">
+                Utilizamos escáneres <strong>Kodak Alaris</strong> de alto volumen, 
+                garantizando imágenes nítidas y procesamiento eficiente de grandes cantidades de documentos.
+              </p>
+              <div class="d-flex flex-wrap gap-2 justify-content-center">
+                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2">OCR Avanzado</span>
+                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2">Alta Resolución</span>
+                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2">ISO 9001</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="proceso" class="py-5" style="background: #f8f9fa; padding-top: 5rem; padding-bottom: 5rem;">
+    <div class="container">
+      <div class="text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+        <span class="section-badge" style="background: rgba(13, 74, 140, 0.1); color: var(--bs-primary);">
+          Metodología probada
+        </span>
+        <h2 class="display-5 fw-bold mb-3">
+          Nuestro <span class="text-gradient">proceso de digitalización</span>
+        </h2>
+        <p class="lead text-muted">
+          Un flujo de trabajo optimizado que garantiza la máxima calidad y eficiencia en cada etapa.
+        </p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Step 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-service h-100 p-4">
+            <div class="card-body">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: var(--bs-primary); color: white; flex-shrink: 0;">
+                  <span class="fw-bold">1</span>
+                </div>
+                <div class="icon-box">
+                  <i class="bi bi-inbox fs-5"></i>
+                </div>
+              </div>
+              <h5 class="fw-bold mb-2">Recepción y clasificación</h5>
+              <p class="text-muted mb-0 small">Organizamos los documentos para su procesamiento eficiente.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-service h-100 p-4">
+            <div class="card-body">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: var(--bs-primary); color: white; flex-shrink: 0;">
+                  <span class="fw-bold">2</span>
+                </div>
+                <div class="icon-box">
+                  <i class="bi bi-brush fs-5"></i>
+                </div>
+              </div>
+              <h5 class="fw-bold mb-2">Preparación y limpieza</h5>
+              <p class="text-muted mb-0 small">Eliminamos elementos innecesarios para un escaneo óptimo.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-service h-100 p-4">
+            <div class="card-body">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: var(--bs-primary); color: white; flex-shrink: 0;">
+                  <span class="fw-bold">3</span>
+                </div>
+                <div class="icon-box">
+                  <i class="bi bi-display fs-5"></i>
+                </div>
+              </div>
+              <h5 class="fw-bold mb-2">Escaneo de alta calidad</h5>
+              <p class="text-muted mb-0 small">Utilizamos escáneres Kodak Alaris de alto volumen para obtener imágenes nítidas.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-service h-100 p-4">
+            <div class="card-body">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: var(--bs-primary); color: white; flex-shrink: 0;">
+                  <span class="fw-bold">4</span>
+                </div>
+                <div class="icon-box">
+                  <i class="bi bi-tags fs-5"></i>
+                </div>
+              </div>
+              <h5 class="fw-bold mb-2">Indexación</h5>
+              <p class="text-muted mb-0 small">Capturamos metadatos esenciales para facilitar la búsqueda y recuperación de documentos.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-service h-100 p-4">
+            <div class="card-body">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; background: var(--bs-primary); color: white; flex-shrink: 0;">
+                  <span class="fw-bold">5</span>
+                </div>
+                <div class="icon-box">
+                  <i class="bi bi-database-check fs-5"></i>
+                </div>
+              </div>
+              <h5 class="fw-bold mb-2">Almacenamiento digital</h5>
+              <p class="text-muted mb-0 small">Integramos la información en su sistema de gestión documental, utilizando unidades NAS o SAN.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="py-5" style="padding-top: 5rem; padding-bottom: 5rem;">
+    <div class="container">
+      <div class="text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+        <span class="section-badge" style="background: rgba(13, 74, 140, 0.1); color: var(--bs-primary);">
+          Ventajas competitivas
+        </span>
+        <h2 class="display-5 fw-bold mb-3">
+          Beneficios de <span class="text-gradient">digitalizar tus documentos</span>
+        </h2>
+        <p class="lead text-muted">
+          La digitalización no solo reduce el uso de papel, sino que también mejora 
+          la accesibilidad, preservación y protección de la información.
+        </p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Benefit 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-benefit h-100 p-4 text-center">
+            <div class="card-body">
+              <div class="icon-box mx-auto mb-3">
+                <i class="bi bi-shield-check fs-4"></i>
+              </div>
+              <div class="fw-bold mb-2" style="font-size: 2rem; color: var(--bs-primary);">95%</div>
+              <h5 class="fw-bold mb-2">Reducción de pérdidas</h5>
+              <p class="text-muted mb-0 small">Minimiza el riesgo de extravío de documentos.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Benefit 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-benefit h-100 p-4 text-center">
+            <div class="card-body">
+              <div class="icon-box mx-auto mb-3">
+                <i class="bi bi-box-seam fs-4"></i>
+              </div>
+              <div class="fw-bold mb-2" style="font-size: 2rem; color: var(--bs-primary);">88%</div>
+              <h5 class="fw-bold mb-2">Optimización del espacio</h5>
+              <p class="text-muted mb-0 small">Disminuye la necesidad de almacenamiento físico.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Benefit 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-benefit h-100 p-4 text-center">
+            <div class="card-body">
+              <div class="icon-box mx-auto mb-3">
+                <i class="bi bi-lightning-charge fs-4"></i>
+              </div>
+              <div class="fw-bold mb-2" style="font-size: 2rem; color: var(--bs-primary);">Segundos</div>
+              <h5 class="fw-bold mb-2">Acceso inmediato</h5>
+              <p class="text-muted mb-0 small">Encuentra y consulta archivos digitales al instante.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Benefit 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-benefit h-100 p-4 text-center">
+            <div class="card-body">
+              <div class="icon-box mx-auto mb-3">
+                <i class="bi bi-lock fs-4"></i>
+              </div>
+              <div class="fw-bold mb-2" style="font-size: 2rem; color: var(--bs-primary);">100%</div>
+              <h5 class="fw-bold mb-2">Seguridad reforzada</h5>
+              <p class="text-muted mb-0 small">Protege la información contra daños y pérdidas.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Benefit 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-benefit h-100 p-4 text-center">
+            <div class="card-body">
+              <div class="icon-box mx-auto mb-3">
+                <i class="bi bi-search fs-4"></i>
+              </div>
+              <div class="fw-bold mb-2" style="font-size: 2rem; color: var(--bs-primary);">Inteligente</div>
+              <h5 class="fw-bold mb-2">Búsqueda avanzada</h5>
+              <p class="text-muted mb-0 small">Facilita la recuperación de datos con herramientas avanzadas.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Benefit 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-benefit h-100 p-4 text-center">
+            <div class="card-body">
+              <div class="icon-box mx-auto mb-3">
+                <i class="bi bi-people fs-4"></i>
+              </div>
+              <div class="fw-bold mb-2" style="font-size: 2rem; color: var(--bs-primary);">Remoto</div>
+              <h5 class="fw-bold mb-2">Colaboración</h5>
+              <p class="text-muted mb-0 small">Permite compartir documentos de forma electrónica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="contacto" class="py-5" style="background: linear-gradient(135deg, var(--bs-primary) 0%, #1a5a9e 100%); padding-top: 5rem; padding-bottom: 5rem;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 text-white text-center text-lg-start mb-4 mb-lg-0">
+          <h2 class="display-6 fw-bold mb-3">
+            ¿Listo para digitalizar tus documentos?
+          </h2>
+          <p class="lead mb-0" style="opacity: 0.9;">
+            Contáctanos hoy mismo y descubre cómo podemos ayudarte a optimizar tu archivo documental.
+          </p>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+          <a href="arguz-bootstrap.html#contacto" class="btn btn-secondary btn-lg me-2 mb-2">
+            <i class="bi bi-chat-dots me-2"></i>
+            Contactar ahora
+          </a>
+          <a href="tel:+525530042777" class="btn btn-outline-light btn-lg mb-2">
+            <i class="bi bi-telephone me-2"></i>
+            Llamar
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-dark py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="d-flex flex-column mb-4">
+            <span class="fw-bold fs-4 text-white">ARGUZ</span>
+            <small class="text-uppercase" style="font-size: 0.65rem; letter-spacing: 0.15em; opacity: 0.7;">Que viva la información</small>
+          </div>
+          <p style="opacity: 0.7;">
+            Su socio confiable para soluciones totales en procesos documentales. Más de 25 años transformando la gestión documental.
+          </p>
+        </div>
+        
+        <div class="col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Servicios</h6>
+          <ul class="list-unstyled" style="opacity: 0.7;">
+            <li class="mb-2"><a href="#" class="text-decoration-none text-white-50">Digitalización</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-white-50">Consultoría</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-white-50">Gestión Documental</a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-white-50">Respaldo</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3">
+          <h6 class="text-white fw-bold mb-3">Contacto</h6>
+          <ul class="list-unstyled" style="opacity: 0.7;">
+            <li class="mb-2 d-flex align-items-center gap-2">
+              <i class="bi bi-geo-alt"></i>
+              <span>Av. Miguel Hidalgo 24-B, Cuautitlán Izcalli, Edo. Méx.</span>
+            </li>
+            <li class="mb-2 d-flex align-items-center gap-2">
+              <i class="bi bi-telephone"></i>
+              <a href="tel:+525530042777" class="text-decoration-none text-white-50">+52 (55) 3004-2777</a>
+            </li>
+            <li class="mb-2 d-flex align-items-center gap-2">
+              <i class="bi bi-envelope"></i>
+              <a href="mailto:info@arguz.com" class="text-decoration-none text-white-50">info@arguz.com</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3">
+          <h6 class="text-white fw-bold mb-3">Síguenos</h6>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white-50"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin fs-5"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-twitter-x fs-5"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <hr class="my-4" style="opacity: 0.1;">
+      
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <small style="opacity: 0.5;">© 2024 Arguz Digitalización. Todos los derechos reservados.</small>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <small style="opacity: 0.5;">
+            <a href="#" class="text-decoration-none text-white-50">Aviso de Privacidad</a>
+            <span class="mx-2">|</span>
+            <a href="#" class="text-decoration-none text-white-50">Términos y Condiciones</a>
+          </small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Navbar scroll effect -->
+  <script>
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('mainNavbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled', 'navbar-light');
+        navbar.classList.remove('navbar-dark');
+      } else {
+        navbar.classList.remove('navbar-scrolled', 'navbar-light');
+        navbar.classList.add('navbar-dark');
+      }
+    });
+  </script>
+</body>
+</html>
