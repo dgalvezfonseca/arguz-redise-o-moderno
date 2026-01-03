@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Automatización de Procesos Empresariales con Laserfiche - Arguz es distribuidor autorizado en México. Optimiza operaciones, reduce costos y mejora la eficiencia.">
+  <title>Automatización de Procesos Empresariales | Arguz - Distribuidor Laserfiche México</title>
+  
+  <!-- 
+    INSTRUCCIONES PARA BOOTSTRAP STUDIO:
+    1. Descarga Bootstrap 5.3.3 CSS y Bootstrap Icons 1.11.3
+    2. Incluye los archivos CSS en tu proyecto de Bootstrap Studio
+    3. O copia el contenido de los CSS en un bloque <style>
+  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bs-primary: #0d4a8c;
+      --bs-primary-light: #1a5fb4;
+      --bs-secondary: #3584e4;
+    }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    
+    .gradient-primary {
+      background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-primary-light) 100%);
+    }
+    
+    .gradient-hero {
+      background: linear-gradient(135deg, #0d4a8c 0%, #1a5fb4 50%, #3584e4 100%);
+    }
+    
+    .card-feature {
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card-feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(13, 74, 140, 0.15) !important;
+    }
+    
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+    }
+    
+    .icon-box-round {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+    }
+    
+    .btn-gradient {
+      background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-primary-light) 100%);
+      border: none;
+      color: white;
+    }
+    
+    .btn-gradient:hover {
+      background: linear-gradient(135deg, var(--bs-primary-light) 0%, var(--bs-secondary) 100%);
+      color: white;
+    }
+    
+    .section-badge {
+      background: rgba(13, 74, 140, 0.1);
+      color: var(--bs-primary);
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top gradient-hero">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <div class="rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: rgba(255,255,255,0.2);">
+          <i class="bi bi-folder-fill text-white"></i>
+        </div>
+        <span class="fw-bold">Arguz</span>
+      </a>
+      <a href="index.html" class="btn btn-outline-light btn-sm">
+        <i class="bi bi-arrow-left me-1"></i> Volver al inicio
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-5 gradient-hero" style="padding-top: 8rem; padding-bottom: 4rem;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 mx-auto text-center text-white">
+          <span class="badge mb-3 px-3 py-2" style="background: rgba(255,255,255,0.2); font-size: 0.875rem;">
+            <i class="bi bi-gear-wide-connected me-1"></i> Laserfiche Partner
+          </span>
+          <h1 class="display-4 fw-bold mb-4">
+            Automatización de Procesos Empresariales
+          </h1>
+          <p class="lead mb-4" style="opacity: 0.9;">
+            Plataforma líder en automatización de procesos empresariales y gestión documental. 
+            Optimiza tus operaciones, reduce costos y mejora la eficiencia en todos los niveles de tu organización.
+          </p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="#contacto" class="btn btn-light btn-lg px-4">
+              <i class="bi bi-calendar-check me-2"></i>
+              Solicitar demo
+            </a>
+            <a href="#caracteristicas" class="btn btn-outline-light btn-lg px-4">
+              Conocer más
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="caracteristicas" class="py-5" style="padding-top: 5rem; padding-bottom: 5rem;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge section-badge mb-3 px-3 py-2">Características</span>
+        <h2 class="display-5 fw-bold mb-3">
+          Automatización de procesos <span style="color: #0d4a8c;">de forma ágil</span>
+        </h2>
+        <p class="lead text-muted mx-auto" style="max-width: 700px;">
+          Transforma la manera en que tu empresa opera con herramientas intuitivas y potentes
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Feature 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-feature h-100 border-0 shadow-sm p-4">
+            <div class="card-body">
+              <div class="icon-box d-flex align-items-center justify-content-center mb-4 gradient-primary">
+                <i class="bi bi-mouse text-white fs-4"></i>
+              </div>
+              <h4 class="fw-bold mb-3">Automatización sin código</h4>
+              <p class="text-muted mb-0">Crea flujos de trabajo personalizados de manera rápida y sencilla con nuestra interfaz intuitiva de arrastrar y soltar, sin necesidad de programación.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-feature h-100 border-0 shadow-sm p-4">
+            <div class="card-body">
+              <div class="icon-box d-flex align-items-center justify-content-center mb-4 gradient-primary">
+                <i class="bi bi-plug text-white fs-4"></i>
+              </div>
+              <h4 class="fw-bold mb-3">Integraciones poderosas</h4>
+              <p class="text-muted mb-0">Conecta Laserfiche con tus aplicaciones empresariales clave, como Salesforce, SAP, Adobe Sign y más.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-feature h-100 border-0 shadow-sm p-4">
+            <div class="card-body">
+              <div class="icon-box d-flex align-items-center justify-content-center mb-4 gradient-primary">
+                <i class="bi bi-check2-circle text-white fs-4"></i>
+              </div>
+              <h4 class="fw-bold mb-3">Aprobaciones aceleradas</h4>
+              <p class="text-muted mb-0">Gestiona contratos y políticas internas automatizando el enrutamiento de documentos y recopilando aprobaciones y firmas de manera eficiente.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-feature h-100 border-0 shadow-sm p-4">
+            <div class="card-body">
+              <div class="icon-box d-flex align-items-center justify-content-center mb-4 gradient-primary">
+                <i class="bi bi-collection text-white fs-4"></i>
+              </div>
+              <h4 class="fw-bold mb-3">Plantillas preconstruidas</h4>
+              <p class="text-muted mb-0">Accede a cientos de flujos de trabajo predefinidos que te permiten implementar soluciones rápidamente.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Feature 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-feature h-100 border-0 shadow-sm p-4">
+            <div class="card-body">
+              <div class="icon-box d-flex align-items-center justify-content-center mb-4 gradient-primary">
+                <i class="bi bi-robot text-white fs-4"></i>
+              </div>
+              <h4 class="fw-bold mb-3">Inteligencia artificial integrada</h4>
+              <p class="text-muted mb-0">Automatiza decisiones complejas utilizando herramientas basadas en IA y machine learning que analizan datos y detectan patrones.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Feature 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card card-feature h-100 border-0 shadow-sm p-4">
+            <div class="card-body">
+              <div class="icon-box d-flex align-items-center justify-content-center mb-4 gradient-primary">
+                <i class="bi bi-shield-lock text-white fs-4"></i>
+              </div>
+              <h4 class="fw-bold mb-3">Cumplimiento normativo y seguridad</h4>
+              <p class="text-muted mb-0">Mantente en cumplimiento con normativas como la Ley General de Archivos, con controles de acceso granulares y cifrado de datos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding-top: 4rem; padding-bottom: 4rem;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="display-6 fw-bold mb-4">
+            Comienza tu automatización de procesos empresariales ahora mismo
+          </h2>
+          <p class="lead text-muted mb-4">
+            Laserfiche es el software líder mundial en administración de archivos, gestión documental 
+            y de contenido empresarial, automatización de procesos de negocios y análisis potenciadores de productividad.
+          </p>
+          <a href="#contacto" class="btn btn-gradient btn-lg px-5 py-3">
+            <i class="bi bi-rocket-takeoff me-2"></i>
+            Comenzar ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Departments Section -->
+  <section class="py-5" style="padding-top: 5rem; padding-bottom: 5rem;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge section-badge mb-3 px-3 py-2">Departamentos</span>
+        <h2 class="display-5 fw-bold mb-3">
+          Soluciones adaptadas a <span style="color: #0d4a8c;">cada departamento</span>
+        </h2>
+      </div>
+
+      <div class="row g-4">
+        <!-- Department 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 text-center p-4 gradient-primary" style="border-radius: 16px;">
+            <div class="card-body text-white">
+              <div class="icon-box-round d-flex align-items-center justify-content-center mx-auto mb-4">
+                <i class="bi bi-calculator fs-2"></i>
+              </div>
+              <h5 class="fw-bold mb-3">Contabilidad y Finanzas</h5>
+              <p class="small mb-0" style="opacity: 0.9;">Optimiza el procesamiento de facturas y mejora la visibilidad de tus procesos de cuentas por pagar.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Department 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 text-center p-4 gradient-primary" style="border-radius: 16px;">
+            <div class="card-body text-white">
+              <div class="icon-box-round d-flex align-items-center justify-content-center mx-auto mb-4">
+                <i class="bi bi-headset fs-2"></i>
+              </div>
+              <h5 class="fw-bold mb-3">Servicio al Cliente</h5>
+              <p class="small mb-0" style="opacity: 0.9;">Permite que tus representantes se enfoquen en brindar un servicio excepcional, automatizando tareas administrativas.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Department 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 text-center p-4 gradient-primary" style="border-radius: 16px;">
+            <div class="card-body text-white">
+              <div class="icon-box-round d-flex align-items-center justify-content-center mx-auto mb-4">
+                <i class="bi bi-people fs-2"></i>
+              </div>
+              <h5 class="fw-bold mb-3">Recursos Humanos</h5>
+              <p class="small mb-0" style="opacity: 0.9;">Automatiza tareas relacionadas con el personal y realiza un seguimiento de las decisiones a lo largo del ciclo de vida del empleado.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Department 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 text-center p-4 gradient-primary" style="border-radius: 16px;">
+            <div class="card-body text-white">
+              <div class="icon-box-round d-flex align-items-center justify-content-center mx-auto mb-4">
+                <i class="bi bi-gear fs-2"></i>
+              </div>
+              <h5 class="fw-bold mb-3">Sistemas</h5>
+              <p class="small mb-0" style="opacity: 0.9;">Moderniza tu infraestructura de TI con una plataforma ECM flexible y escalable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contacto" class="py-5" style="background: #f8f9fa; padding-top: 5rem; padding-bottom: 5rem;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-lg" style="border-radius: 20px;">
+            <div class="card-body p-5">
+              <div class="text-center mb-4">
+                <h2 class="fw-bold mb-2">Solicita tu demo</h2>
+                <p class="text-muted">Descubre cómo Laserfiche puede transformar tu empresa</p>
+              </div>
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="Tu nombre">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Empresa</label>
+                    <input type="text" class="form-control form-control-lg" placeholder="Tu empresa">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control form-control-lg" placeholder="tu@email.com">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Teléfono</label>
+                    <input type="tel" class="form-control form-control-lg" placeholder="+52 55 1234 5678">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Departamento de interés</label>
+                    <select class="form-select form-select-lg">
+                      <option>Selecciona un departamento</option>
+                      <option>Contabilidad y Finanzas</option>
+                      <option>Servicio al Cliente</option>
+                      <option>Recursos Humanos</option>
+                      <option>Sistemas / TI</option>
+                      <option>Otro</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Mensaje</label>
+                    <textarea class="form-control" rows="4" placeholder="Cuéntanos sobre tus necesidades de automatización..."></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-gradient btn-lg w-100 py-3">
+                      <i class="bi bi-send me-2"></i>
+                      Solicitar demo gratuita
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 text-white text-center" style="background: #0d4a8c;">
+    <div class="container">
+      <p class="mb-2">
+        <i class="bi bi-geo-alt me-1"></i> Av. Miguel Hidalgo 24-B, Lago de Gpe, Cuautitlan Izcalli, Estado de México
+      </p>
+      <p class="mb-2">
+        <i class="bi bi-telephone me-1"></i> +52 (55) 3004-2777
+      </p>
+      <p class="mb-0 small" style="opacity: 0.8;">
+        © 2024 Arguz. Distribuidor autorizado de Laserfiche en México.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
