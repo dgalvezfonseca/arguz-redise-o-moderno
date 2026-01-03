@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const services = [
   {
     icon: "bi-search",
@@ -5,6 +7,7 @@ const services = [
     description:
       "Ofrecemos herramientas y asesoría técnica para la correcta administración de sus archivos, incluyendo orientación legal sobre qué documentos pueden digitalizarse.",
     features: ["Diagnóstico de archivos", "Asesoría legal", "Plan de gestión"],
+    link: null,
   },
   {
     icon: "bi-display",
@@ -12,6 +15,7 @@ const services = [
     description:
       "Transformamos sus documentos físicos a formatos digitales con tecnología de vanguardia, utilizando escáneres Kodak Alaris de alto volumen.",
     features: ["Escaneo de alta calidad", "OCR avanzado", "Indexación inteligente"],
+    link: "/digitalizacion-de-documentos",
   },
   {
     icon: "bi-database",
@@ -19,6 +23,7 @@ const services = [
     description:
       "Sistema integral para organizar documentos físicos y digitales, con flujos de trabajo automatizados y acceso desde cualquier ubicación.",
     features: ["Laserfiche", "Acceso remoto", "Automatización"],
+    link: null,
   },
   {
     icon: "bi-cloud-arrow-up",
@@ -26,6 +31,7 @@ const services = [
     description:
       "Solución completa de respaldos en la nube para PCs, laptops, servidores y dispositivos móviles con tecnología Synology.",
     features: ["Backup automático", "Recuperación rápida", "Seguridad total"],
+    link: null,
   },
 ];
 
@@ -89,14 +95,25 @@ export const Services = () => {
                   </ul>
 
                   {/* Link */}
-                  <a 
-                    href="#contacto" 
-                    className="text-decoration-none d-inline-flex align-items-center gap-1"
-                    style={{ color: 'var(--bs-primary)' }}
-                  >
-                    Conocer más
-                    <i className="bi bi-arrow-right"></i>
-                  </a>
+                  {service.link ? (
+                    <Link 
+                      to={service.link}
+                      className="text-decoration-none d-inline-flex align-items-center gap-1"
+                      style={{ color: 'var(--bs-primary)' }}
+                    >
+                      Conocer más
+                      <i className="bi bi-arrow-right"></i>
+                    </Link>
+                  ) : (
+                    <a 
+                      href="#contacto" 
+                      className="text-decoration-none d-inline-flex align-items-center gap-1"
+                      style={{ color: 'var(--bs-primary)' }}
+                    >
+                      Conocer más
+                      <i className="bi bi-arrow-right"></i>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
