@@ -23,7 +23,7 @@ const services = [
     description:
       "Sistema integral para organizar documentos físicos y digitales, con flujos de trabajo automatizados y acceso desde cualquier ubicación.",
     features: ["Laserfiche", "Acceso remoto", "Automatización"],
-    link: "/automatizacion-procesos-empresariales",
+    link: "/gestion-documental",
   },
   {
     icon: "bi-cloud-arrow-up",
