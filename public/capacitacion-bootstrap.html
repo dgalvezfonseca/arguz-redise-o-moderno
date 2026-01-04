@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capacitación Documental | Arguz Digitalización</title>
+  <meta name="description" content="Plataforma líder en capacitación documental. Cursos virtuales en Ciencias de la Documentación diseñados para facilitar y automatizar la formación de tus empleados.">
+  <meta name="keywords" content="capacitación documental, cursos virtuales, ciencias de la documentación, formación empresarial, e-learning, México">
+  <link rel="canonical" href="https://arguz.com/capacitacion/">
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Arguz Brand Colors */
+      --arguz-primary: #0d3a6e;
+      --arguz-primary-light: #1a5a9e;
+      --arguz-primary-dark: #082548;
+      --arguz-secondary: #d4a017;
+      --arguz-secondary-light: #e8b82a;
+      --arguz-accent: #2a8a8a;
+      --arguz-light: #f8fafc;
+      --arguz-dark: #1e293b;
+      --arguz-muted: #64748b;
+      
+      /* Fonts */
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      
+      /* Shadows */
+      --shadow-sm: 0 2px 8px -2px rgba(13, 58, 110, 0.08);
+      --shadow-md: 0 8px 24px -8px rgba(13, 58, 110, 0.12);
+      --shadow-lg: 0 20px 50px -15px rgba(13, 58, 110, 0.15);
+      --shadow-gold: 0 8px 30px -8px rgba(212, 160, 23, 0.3);
+    }
+    
+    body {
+      font-family: var(--font-body);
+      color: var(--arguz-dark);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+    }
+    
+    /* Navbar */
+    .navbar-arguz {
+      background: rgba(13, 58, 110, 0.95);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-arguz.scrolled {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .navbar-arguz.scrolled .nav-link,
+    .navbar-arguz.scrolled .navbar-brand-text,
+    .navbar-arguz.scrolled .phone-link {
+      color: var(--arguz-dark) !important;
+    }
+    
+    .navbar-brand-text {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .navbar-brand-tagline {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      opacity: 0.7;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, var(--arguz-primary-dark) 0%, var(--arguz-primary) 50%, var(--arguz-accent) 100%);
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50px;
+      font-size: 0.875rem;
+      color: white;
+    }
+    
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--arguz-secondary);
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      animation: pulse 2s infinite;
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, var(--arguz-secondary) 0%, var(--arguz-secondary-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .btn-hero {
+      background: var(--arguz-secondary);
+      color: var(--arguz-dark);
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      box-shadow: var(--shadow-gold);
+      border: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-hero:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px -8px rgba(212, 160, 23, 0.4);
+      background: var(--arguz-secondary-light);
+      color: var(--arguz-dark);
+    }
+    
+    .btn-hero-outline {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-hero-outline:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+      color: white;
+    }
+    
+    .feature-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.75rem;
+      color: white;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    
+    .feature-pill i {
+      color: var(--arguz-secondary);
+    }
+    
+    /* Section Styles */
+    .section-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(13, 58, 110, 0.1);
+      color: var(--arguz-primary);
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+    
+    .section-badge-gold {
+      background: rgba(212, 160, 23, 0.15);
+      color: var(--arguz-dark);
+    }
+    
+    /* Feature Cards */
+    .card-feature {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .card-feature:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(13, 58, 110, 0.2);
+      transform: translateY(-5px);
+    }
+    
+    .icon-box {
+      width: 56px;
+      height: 56px;
+      background: rgba(13, 58, 110, 0.1);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .icon-box i {
+      font-size: 1.5rem;
+      color: var(--arguz-primary);
+      transition: all 0.3s ease;
+    }
+    
+    .card-feature:hover .icon-box {
+      background: var(--arguz-primary);
+      transform: scale(1.1);
+    }
+    
+    .card-feature:hover .icon-box i {
+      color: white;
+    }
+    
+    /* Benefit Cards */
+    .card-benefit {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      height: 100%;
+      text-align: center;
+    }
+    
+    .card-benefit:hover {
+      box-shadow: var(--shadow-md);
+    }
+    
+    .card-benefit:hover .icon-box {
+      background: var(--arguz-primary);
+    }
+    
+    .card-benefit:hover .icon-box i {
+      color: white;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--arguz-primary) 0%, var(--arguz-primary-dark) 100%);
+    }
+    
+    /* Footer */
+    .footer-arguz {
+      background: var(--arguz-primary);
+      color: white;
+    }
+    
+    .footer-arguz a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-arguz a:hover {
+      color: var(--arguz-secondary);
+    }
+    
+    /* Animations */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-slide-up {
+      animation: slideUp 0.6s ease-out forwards;
+    }
+    
+    .animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
+    
+    /* Floating elements */
+    .floating-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    /* Hero gradient fade */
+    .hero-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(to top, white 0%, transparent 100%);
+    }
+    
+    /* Responsive */
+    @media (max-width: 991.98px) {
+      .hero-section {
+        padding-top: 100px;
+        min-height: auto;
+        padding-bottom: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-arguz py-3" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand d-flex flex-column" href="index.html">
+        <span class="navbar-brand-text text-white">ARGUZ</span>
+        <span class="navbar-brand-tagline text-white-50">QUE VIVA LA INFORMACIÓN</span>
+      </a>
+      
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white px-3" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white px-3" href="index.html#servicios">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white px-3" href="index.html#beneficios">Beneficios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white px-3" href="index.html#nosotros">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white px-3" href="index.html#contacto">Contacto</a>
+          </li>
+        </ul>
+        
+        <div class="d-flex align-items-center gap-3">
+          <a href="tel:+525530042777" class="text-white text-decoration-none d-none d-lg-flex align-items-center gap-2 phone-link">
+            <i class="bi bi-telephone"></i>
+            <span>+52 (55) 3004-2777</span>
+          </a>
+          <a href="index.html#contacto" class="btn btn-hero">Cotizar ahora</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="inicio" class="hero-section d-flex align-items-center">
+    <!-- Floating circles -->
+    <div class="floating-circle" style="width: 300px; height: 300px; background: rgba(212, 160, 23, 0.2); top: 80px; right: 50px;"></div>
+    <div class="floating-circle" style="width: 400px; height: 400px; background: rgba(42, 138, 138, 0.1); bottom: 80px; left: 50px; animation-delay: 2s;"></div>
+    
+    <div class="container position-relative" style="z-index: 10;">
+      <div class="row">
+        <div class="col-lg-10 col-xl-8">
+          <!-- Badge -->
+          <div class="animate-slide-up mb-4">
+            <span class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Formación en Ciencias de la Documentación
+            </span>
+          </div>
+          
+          <!-- Heading -->
+          <h1 class="display-3 fw-bold text-white mb-4 animate-slide-up animate-delay-1" style="line-height: 1.1;">
+            Capacitación <span class="text-gradient">Documental</span>
+          </h1>
+          
+          <!-- Subheading -->
+          <p class="lead text-white mb-5 animate-slide-up animate-delay-2" style="opacity: 0.9; max-width: 600px;">
+            Transforma la forma en que tu empresa aborda la formación con nuestra plataforma líder en Ciencias de la Documentación. Cursos virtuales diseñados para facilitar y automatizar la formación de tus empleados.
+          </p>
+          
+          <!-- CTA Buttons -->
+          <div class="d-flex flex-wrap gap-3 mb-5 animate-slide-up animate-delay-3">
+            <a href="#caracteristicas" class="btn btn-hero">
+              Ver características
+              <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+            <a href="index.html#contacto" class="btn btn-hero-outline">
+              Solicitar información
+            </a>
+          </div>
+          
+          <!-- Feature Pills -->
+          <div class="d-flex flex-wrap gap-3 animate-slide-up animate-delay-4">
+            <div class="feature-pill">
+              <i class="bi bi-laptop"></i>
+              <span>Cursos virtuales</span>
+            </div>
+            <div class="feature-pill">
+              <i class="bi bi-person-check"></i>
+              <span>Certificaciones</span>
+            </div>
+            <div class="feature-pill">
+              <i class="bi bi-calendar-check"></i>
+              <span>Flexibilidad total</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Gradient fade -->
+    <div class="hero-fade"></div>
+  </section>
+
+  <!-- ========== CARACTERÍSTICAS SECTION ========== -->
+  <section id="caracteristicas" class="py-5" style="padding-top: 6rem; padding-bottom: 6rem;">
+    <div class="container">
+      <!-- Section header -->
+      <div class="text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+        <span class="section-badge">Características Principales</span>
+        <h2 class="display-5 fw-bold mb-3">
+          Plataforma de <span class="text-gradient">capacitación única</span>
+        </h2>
+        <p class="lead text-muted">
+          Hemos perfeccionado la sinergia entre tecnología y educación para ofrecerte una experiencia de formación excepcional.
+        </p>
+      </div>
+
+      <!-- Features grid -->
+      <div class="row g-4">
+        <!-- Feature 1 -->
+        <div class="col-md-6">
+          <div class="card-feature">
+            <div class="icon-box mb-4">
+              <i class="bi bi-palette"></i>
+            </div>
+            <h3 class="h4 fw-bold mb-3">Desarrollo de Cursos Personalizados</h3>
+            <p class="text-muted mb-0">
+              Gestionamos los contenidos para ofrecer una experiencia educativa única. Mantenemos una fluida relación y comunicación entre alumnos y docentes.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="col-md-6">
+          <div class="card-feature">
+            <div class="icon-box mb-4">
+              <i class="bi bi-clipboard-check"></i>
+            </div>
+            <h3 class="h4 fw-bold mb-3">Potente Estructura de Evaluaciones</h3>
+            <p class="text-muted mb-0">
+              Generación de constancias, certificados y reportes para un seguimiento detallado del progreso. Personalizable según tus necesidades específicas.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="col-md-6">
+          <div class="card-feature">
+            <div class="icon-box mb-4">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h3 class="h4 fw-bold mb-3">Flexibilidad y Accesibilidad</h3>
+            <p class="text-muted mb-0">
+              Estandariza el aprendizaje con una interfaz fácil y flexible desde cualquier dispositivo. Implementación rápida, remota y personalizada.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="col-md-6">
+          <div class="card-feature">
+            <div class="icon-box mb-4">
+              <i class="bi bi-piggy-bank"></i>
+            </div>
+            <h3 class="h4 fw-bold mb-3">Ahorro de Costos Operativos</h3>
+            <p class="text-muted mb-0">
+              Reducción significativa de gastos asociados a la capacitación tradicional. Adaptable a las necesidades educativas cambiantes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BENEFICIOS SECTION ========== -->
+  <section id="beneficios" class="py-5" style="background: var(--arguz-light); padding-top: 6rem; padding-bottom: 6rem;">
+    <div class="container">
+      <!-- Section header -->
+      <div class="text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+        <span class="section-badge section-badge-gold">Beneficios</span>
+        <h2 class="display-5 fw-bold mb-3">
+          ¿Por qué elegir nuestra <span class="text-gradient">capacitación?</span>
+        </h2>
+      </div>
+
+      <!-- Benefits grid -->
+      <div class="row g-4">
+        <!-- Benefit 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-benefit">
+            <div class="icon-box mx-auto mb-3">
+              <i class="bi bi-mortarboard"></i>
+            </div>
+            <h4 class="h5 fw-bold mb-2">Plataforma Líder</h4>
+            <p class="text-muted small mb-0">Ciencias de la Documentación con tecnología de punta</p>
+          </div>
+        </div>
+        
+        <!-- Benefit 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-benefit">
+            <div class="icon-box mx-auto mb-3">
+              <i class="bi bi-graph-up-arrow"></i>
+            </div>
+            <h4 class="h5 fw-bold mb-2">Potencia tu Equipo</h4>
+            <p class="text-muted small mb-0">Formación continua para el crecimiento profesional</p>
+          </div>
+        </div>
+        
+        <!-- Benefit 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-benefit">
+            <div class="icon-box mx-auto mb-3">
+              <i class="bi bi-clock-history"></i>
+            </div>
+            <h4 class="h5 fw-bold mb-2">Aprendizaje Flexible</h4>
+            <p class="text-muted small mb-0">Estudia a tu ritmo desde cualquier lugar</p>
+          </div>
+        </div>
+        
+        <!-- Benefit 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="card-benefit">
+            <div class="icon-box mx-auto mb-3">
+              <i class="bi bi-patch-check"></i>
+            </div>
+            <h4 class="h5 fw-bold mb-2">Certificación Oficial</h4>
+            <p class="text-muted small mb-0">Constancias y certificados reconocidos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="cta-section py-5" style="padding-top: 5rem; padding-bottom: 5rem;">
+    <div class="container text-center">
+      <h2 class="display-5 fw-bold text-white mb-4">
+        ¿Listo para potenciar a tu equipo?
+      </h2>
+      <p class="lead text-white mb-4" style="opacity: 0.9;">
+        Contáctanos hoy para explorar cómo podemos potenciar juntos el crecimiento y el éxito de tu equipo.
+      </p>
+      <a href="index.html#contacto" class="btn btn-hero btn-lg">
+        Solicitar información
+        <i class="bi bi-arrow-right ms-2"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer-arguz py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Brand -->
+        <div class="col-lg-4">
+          <div class="mb-4">
+            <span class="navbar-brand-text">ARGUZ</span>
+            <span class="d-block navbar-brand-tagline text-white-50">QUE VIVA LA INFORMACIÓN</span>
+          </div>
+          <p class="text-white-50 mb-4">
+            Empresa mexicana especializada en gestión documental, digitalización de documentos, capacitación y respaldo de información.
+          </p>
+        </div>
+        
+        <!-- Services -->
+        <div class="col-lg-2 col-md-4">
+          <h6 class="fw-bold mb-3">Servicios</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="digitalizacion-bootstrap.html">Digitalización</a></li>
+            <li class="mb-2"><a href="gestion-documental-bootstrap.html">Gestión Documental</a></li>
+            <li class="mb-2"><a href="automatizacion-bootstrap.html">Automatización</a></li>
+            <li class="mb-2"><a href="capacitacion-bootstrap.html">Capacitación</a></li>
+          </ul>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="col-lg-2 col-md-4">
+          <h6 class="fw-bold mb-3">Navegación</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index.html">Inicio</a></li>
+            <li class="mb-2"><a href="index.html#servicios">Servicios</a></li>
+            <li class="mb-2"><a href="index.html#nosotros">Nosotros</a></li>
+            <li class="mb-2"><a href="index.html#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact -->
+        <div class="col-lg-4 col-md-4">
+          <h6 class="fw-bold mb-3">Contacto</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2 d-flex align-items-center gap-2">
+              <i class="bi bi-telephone text-white-50"></i>
+              <a href="tel:+525530042777">+52 (55) 3004-2777</a>
+            </li>
+            <li class="mb-2 d-flex align-items-center gap-2">
+              <i class="bi bi-envelope text-white-50"></i>
+              <a href="mailto:contacto@arguz.com">contacto@arguz.com</a>
+            </li>
+            <li class="mb-2 d-flex align-items-start gap-2">
+              <i class="bi bi-geo-alt text-white-50 mt-1"></i>
+              <span class="text-white-50">Ciudad de México, México</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+      
+      <div class="d-flex flex-wrap justify-content-between align-items-center">
+        <p class="text-white-50 small mb-0">
+          © 2024 Arguz Digitalización. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Navbar scroll effect -->
+  <script>
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('mainNavbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
