@@ -26,6 +26,22 @@ const services = [
     link: "/gestion-documental",
   },
   {
+    icon: "bi-gear",
+    title: "Automatización de Procesos",
+    description:
+      "Optimiza tus flujos de trabajo empresariales con automatización inteligente. Reduce tiempos y errores en procesos documentales.",
+    features: ["Flujos automatizados", "Integración ERP", "Reportes en tiempo real"],
+    link: "/automatizacion-procesos-empresariales",
+  },
+  {
+    icon: "bi-mortarboard",
+    title: "Capacitación Documental",
+    description:
+      "Plataforma líder en Ciencias de la Documentación. Cursos virtuales diseñados para facilitar y automatizar la formación de tus empleados.",
+    features: ["Cursos virtuales", "Certificaciones", "Flexibilidad total"],
+    link: "/capacitacion",
+  },
+  {
     icon: "bi-cloud-arrow-up",
     title: "Respaldo de Información",
     description:
