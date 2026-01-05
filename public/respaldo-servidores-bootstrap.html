@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respaldo de Servidores | Arguz Digitalización</title>
+    <meta name="description" content="Soluciones de respaldo para servidores con recuperación en menos de 15 minutos. Protección para PCs, Macs, servidores físicos y máquinas virtuales con Synology.">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bs-primary: #08335e;
+            --bs-secondary: #ffc107;
+            --bs-dark: #0a1628;
+            --bs-heading-font: 'Plus Jakarta Sans', sans-serif;
+            --bs-body-font: 'DM Sans', sans-serif;
+            --shadow-lg: 0 20px 40px rgba(8, 51, 94, 0.15);
+        }
+
+        body {
+            font-family: var(--bs-body-font);
+            color: #333;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--bs-heading-font);
+            font-weight: 700;
+        }
+
+        /* Navbar */
+        .navbar-scrolled {
+            background: rgba(8, 51, 94, 0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--bs-primary) 0%, #0a4a7a 50%, #0d5a8a 100%);
+            min-height: 70vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-blob-1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 193, 7, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            filter: blur(60px);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-blob-2 {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+            filter: blur(40px);
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #062847;
+            border-color: #062847;
+        }
+
+        .btn-secondary {
+            background-color: var(--bs-secondary);
+            border-color: var(--bs-secondary);
+            color: var(--bs-primary);
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e6ac00;
+            border-color: #e6ac00;
+            color: var(--bs-primary);
+        }
+
+        .btn-outline-light {
+            border-width: 2px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+        }
+
+        /* Cards */
+        .card-service {
+            border: 1px solid rgba(8, 51, 94, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .card-service:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--bs-secondary);
+        }
+
+        .card-benefit {
+            border: 1px solid rgba(8, 51, 94, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .card-benefit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(8, 51, 94, 0.1);
+        }
+
+        /* Icon Box */
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(8, 51, 94, 0.1) 0%, rgba(255, 193, 7, 0.1) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bs-primary);
+            transition: all 0.3s ease;
+        }
+
+        .card-service:hover .icon-box {
+            background: var(--bs-secondary);
+            color: var(--bs-primary);
+        }
+
+        /* Section Badge */
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Text Gradient */
+        .text-gradient {
+            background: linear-gradient(135deg, var(--bs-primary) 0%, #0d5a8a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Stats */
+        .stat-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(8, 51, 94, 0.08);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--bs-primary);
+            font-family: var(--bs-heading-font);
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-control {
+            border: 1px solid rgba(8, 51, 94, 0.2);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+        }
+
+        .form-control:focus {
+            border-color: var(--bs-primary);
+            box-shadow: 0 0 0 3px rgba(8, 51, 94, 0.1);
+        }
+
+        /* Footer */
+        .footer-dark {
+            background: var(--bs-dark);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: rgba(8, 51, 94, 0.95); backdrop-filter: blur(10px);">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="arguz-bootstrap.html">
+                <span class="fw-bold fs-5" style="font-family: var(--bs-heading-font);">
+                    <span style="color: var(--bs-secondary);">Arguz</span> Digitalización
+                </span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-3 gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="arguz-bootstrap.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="arguz-bootstrap.html#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="arguz-bootstrap.html#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="arguz-bootstrap.html#contacto">Contacto</a>
+                    </li>
+                </ul>
+                <a href="#contacto" class="btn btn-secondary">Cotizar ahora</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section position-relative overflow-hidden d-flex align-items-center" style="padding-top: 100px;">
+        <div class="hero-pattern position-absolute top-0 start-0 w-100 h-100"></div>
+        <div class="hero-blob-1"></div>
+        <div class="hero-blob-2"></div>
+        
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center text-white">
+                    <span class="badge bg-white bg-opacity-25 text-white px-3 py-2 rounded-pill mb-4">
+                        <i class="bi bi-cloud-arrow-up me-2"></i>
+                        Soluciones de Respaldo
+                    </span>
+                    <h1 class="display-4 fw-bold mb-4" style="font-family: var(--bs-heading-font);">
+                        Respaldo de <span style="color: var(--bs-secondary);">Servidores</span>
+                    </h1>
+                    <p class="lead mb-4 opacity-90" style="font-size: 1.25rem;">
+                        Garantizamos que, en caso de un desastre, podrá recuperar un servidor y 
+                        <strong>reanudar operaciones en menos de 15 minutos.</strong>
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center">
+                        <a href="#soluciones" class="btn btn-secondary btn-lg">
+                            <i class="bi bi-shield-check me-2"></i>
+                            Ver soluciones
+                        </a>
+                        <a href="#contacto" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-chat-dots me-2"></i>
+                            Cotizar ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-5" style="background: #f8fafc;">
+        <div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="section-badge" style="background: rgba(13, 74, 140, 0.1); color: var(--bs-primary);">
+                        Protección Total
+                    </span>
+                    <h2 class="display-6 fw-bold mb-4" style="font-family: var(--bs-heading-font);">
+                        Una solución universal para respaldo de servidores
+                    </h2>
+                    <p class="lead text-muted mb-4">
+                        <strong>Mantenga siempre protegida la información vital para su negocio.</strong>
+                    </p>
+                    <p class="text-muted mb-4">
+                        Todas las empresas necesitan de un plan de respaldo y recuperación ante desastres 
+                        para proteger su centro de datos físico y virtual. Los negocios grandes, medianos 
+                        y pequeños protegen sus ambientes físicos y virtuales usando <strong>Active Backup 
+                        for Business de Synology</strong>, ahorrando de esta manera grandes cantidades de recursos de TI.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="card card-benefit h-100 p-3 text-center">
+                                <div class="icon-box mx-auto mb-3">
+                                    <i class="bi bi-pc-display fs-4"></i>
+                                </div>
+                                <h6 class="fw-bold mb-0">PCs y Macs</h6>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card card-benefit h-100 p-3 text-center">
+                                <div class="icon-box mx-auto mb-3">
+                                    <i class="bi bi-server fs-4"></i>
+                                </div>
+                                <h6 class="fw-bold mb-0">Servidores Físicos</h6>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card card-benefit h-100 p-3 text-center">
+                                <div class="icon-box mx-auto mb-3">
+                                    <i class="bi bi-folder2-open fs-4"></i>
+                                </div>
+                                <h6 class="fw-bold mb-0">Servidores de Archivos</h6>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card card-benefit h-100 p-3 text-center">
+                                <div class="icon-box mx-auto mb-3">
+                                    <i class="bi bi-hdd-stack fs-4"></i>
+                                </div>
+                                <h6 class="fw-bold mb-0">Máquinas Virtuales</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="soluciones" class="py-5">
+        <div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
+            <div class="text-center mb-5" style="max-width: 700px; margin: 0 auto;">
+                <span class="section-badge" style="background: rgba(13, 74, 140, 0.1); color: var(--bs-primary);">
+                    Nuestras Soluciones
+                </span>
+                <h2 class="display-6 fw-bold mb-3" style="font-family: var(--bs-heading-font);">
+                    Protección <span class="text-gradient">completa</span> para cada escenario
+                </h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card card-service h-100 p-4">
+                        <div class="card-body">
+                            <div class="icon-box mb-4">
+                                <i class="bi bi-pc-display fs-4"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3" style="font-family: var(--bs-heading-font);">
+                                Copias de seguridad para PC y Mac
+                            </h4>
+                            <p class="text-muted mb-3">
+                                Realice copias de seguridad y administre PC con Windows y Mac desde una sola consola.
+                            </p>
+                            <p class="text-muted small">
+                                <strong>Copia de seguridad y recuperación sin sistema operativo:</strong> Proteja los endpoints 
+                                en caso de tiempo de inactividad con copias de seguridad a nivel del sistema y recuperación 
+                                completa para todas las aplicaciones, configuraciones y datos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card card-service h-100 p-4">
+                        <div class="card-body">
+                            <div class="icon-box mb-4">
+                                <i class="bi bi-server fs-4"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3" style="font-family: var(--bs-heading-font);">
+                                Protección completa para sus servidores
+                            </h4>
+                            <p class="text-muted mb-3">
+                                Realice copias de seguridad de sus datos y servicios en servidores físicos con Windows o Linux.
+                            </p>
+                            <p class="text-muted small">
+                                Con <strong>Instant Restore</strong>, puede restaurar sus servidores en VMware vSphere™, 
+                                Microsoft Hyper-V y Synology Virtual Machine Manager (VMM) en caso de interrupciones inesperadas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card card-service h-100 p-4">
+                        <div class="card-body">
+                            <div class="icon-box mb-4">
+                                <i class="bi bi-folder2-open fs-4"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3" style="font-family: var(--bs-heading-font);">
+                                Consolide la protección de su servidor de archivos
+                            </h4>
+                            <p class="text-muted mb-3">
+                                Es compatible con Nutanix Files, NetApp ONTAP y Windows VSS.
+                            </p>
+                            <p class="text-muted small">
+                                Soporta protocolos de archivos como SMB y rsync para realizar backups seguros y fiables 
+                                en servidores de archivos de producción.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card card-service h-100 p-4">
+                        <div class="card-body">
+                            <div class="icon-box mb-4">
+                                <i class="bi bi-hdd-stack fs-4"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3" style="font-family: var(--bs-heading-font);">
+                                Copia de seguridad para VMware y Hyper-V
+                            </h4>
+                            <p class="text-muted mb-3">
+                                Copia de seguridad ilimitada de VMware vSphere™ y máquinas virtuales Microsoft Hyper-V.
+                            </p>
+                            <p class="text-muted small">
+                                Con potentes tecnologías de reducción de espacio de almacenamiento para optimizar 
+                                sus recursos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5" style="background: #f8fafc;">
+        <div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="section-badge" style="background: rgba(13, 74, 140, 0.1); color: var(--bs-primary);">
+                        Características
+                    </span>
+                    <h2 class="display-6 fw-bold mb-4" style="font-family: var(--bs-heading-font);">
+                        Copia de seguridad <span class="text-gradient">integral</span>
+                    </h2>
+                    <p class="text-muted mb-4">
+                        Solución integral de respaldo y recuperación ante desastres diseñada para proteger 
+                        los datos en diversos entornos de TI que incluyen ambientes virtuales.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-box" style="width: 40px; height: 40px;">
+                                <i class="bi bi-plug fs-6"></i>
+                            </div>
+                            <span>Fácil de conectarse</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-box" style="width: 40px; height: 40px;">
+                                <i class="bi bi-globe fs-6"></i>
+                            </div>
+                            <span>Accesibilidad vía remota</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-box" style="width: 40px; height: 40px;">
+                                <i class="bi bi-currency-dollar fs-6"></i>
+                            </div>
+                            <span>Precios accesibles</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <div class="stat-number">89%</div>
+                                <div class="small text-muted">Hardware</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <div class="stat-number">88%</div>
+                                <div class="small text-muted">End Point</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <div class="stat-number">98%</div>
+                                <div class="small text-muted">Software</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-box">
+                                <div class="stat-number">+500</div>
+                                <div class="small text-muted">Usuarios</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5" style="background: var(--bs-primary);">
+        <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-white">
+                    <h2 class="display-6 fw-bold mb-3" style="font-family: var(--bs-heading-font);">
+                        Tu información, lo más importante
+                    </h2>
+                    <p class="lead opacity-90 mb-0">
+                        Las empresas de hoy dependen totalmente de sus datos. No importa el tamaño de la organización, 
+                        sus datos son vulnerables a varias amenazas y desastres. <strong>Contamos con una amplia 
+                        variedad de unidades de almacenamiento en existencia.</strong>
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <a href="#contacto" class="btn btn-secondary btn-lg">
+                        <i class="bi bi-chat-dots me-2"></i>
+                        Cotiza ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-5" style="background: #f8fafc;">
+        <div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <span class="section-badge" style="background: rgba(13, 74, 140, 0.1); color: var(--bs-primary);">
+                        Contáctanos
+                    </span>
+                    <h2 class="display-6 fw-bold mb-4" style="font-family: var(--bs-heading-font);">
+                        ¿Listo para proteger tu información?
+                    </h2>
+                    <p class="text-muted mb-4">
+                        Verificación automática de respaldo para asegurar la recuperación de los datos.
+                    </p>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-box" style="width: 50px; height: 50px;">
+                                <i class="bi bi-geo-alt fs-5"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold">Ubicación</div>
+                                <div class="text-muted small">Av. Miguel Hidalgo 24-B, Lago de Gpe, Cuautitlán Izcalli, Estado de México</div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-box" style="width: 50px; height: 50px;">
+                                <i class="bi bi-telephone fs-5"></i>
+                            </div>
+                            <div>
+                                <div class="fw-bold">Teléfono</div>
+                                <div class="text-muted small">+52 55 3004-2777</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-card p-4 p-lg-5">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-medium">Nombre</label>
+                                    <input type="text" class="form-control" placeholder="Tu nombre">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-medium">Email</label>
+                                    <input type="email" class="form-control" placeholder="tu@email.com">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-medium">Teléfono</label>
+                                    <input type="tel" class="form-control" placeholder="+52 55 1234 5678">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-medium">Empresa</label>
+                                    <input type="text" class="form-control" placeholder="Tu empresa">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-medium">Mensaje</label>
+                                    <textarea class="form-control" rows="4" placeholder="¿Cómo podemos ayudarte?"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary w-100">
+                                        <i class="bi bi-send me-2"></i>
+                                        Enviar mensaje
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-dark py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="fw-bold fs-5" style="font-family: var(--bs-heading-font);">
+                            <span style="color: var(--bs-secondary);">Arguz</span> Digitalización
+                        </span>
+                    </div>
+                    <p class="text-white-50 small">
+                        Soluciones integrales en gestión documental, digitalización y automatización de procesos empresariales.
+                    </p>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white fw-bold mb-3">Servicios</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="digitalizacion-bootstrap.html" class="text-white-50 text-decoration-none small">Digitalización</a></li>
+                        <li class="mb-2"><a href="gestion-documental-bootstrap.html" class="text-white-50 text-decoration-none small">Gestión Documental</a></li>
+                        <li class="mb-2"><a href="automatizacion-bootstrap.html" class="text-white-50 text-decoration-none small">Automatización</a></li>
+                        <li class="mb-2"><a href="capacitacion-bootstrap.html" class="text-white-50 text-decoration-none small">Capacitación</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="text-white fw-bold mb-3">Navegación</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="arguz-bootstrap.html" class="text-white-50 text-decoration-none small">Inicio</a></li>
+                        <li class="mb-2"><a href="arguz-bootstrap.html#servicios" class="text-white-50 text-decoration-none small">Servicios</a></li>
+                        <li class="mb-2"><a href="arguz-bootstrap.html#nosotros" class="text-white-50 text-decoration-none small">Nosotros</a></li>
+                        <li class="mb-2"><a href="arguz-bootstrap.html#contacto" class="text-white-50 text-decoration-none small">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="text-white fw-bold mb-3">Contacto</h6>
+                    <ul class="list-unstyled text-white-50 small">
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i>Av. Miguel Hidalgo 24-B, Cuautitlán Izcalli, Edo. de México</li>
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i>+52 55 3004-2777</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 border-white-50">
+            <div class="text-center text-white-50 small">
+                © 2025 Arguz Digitalización S.A. de C.V. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

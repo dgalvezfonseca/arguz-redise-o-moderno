@@ -47,7 +47,7 @@ const services = [
     description:
       "Solución completa de respaldos en la nube para PCs, laptops, servidores y dispositivos móviles con tecnología Synology.",
     features: ["Backup automático", "Recuperación rápida", "Seguridad total"],
-    link: null,
+    link: "/respaldo-servidores",
   },
 ];
 
