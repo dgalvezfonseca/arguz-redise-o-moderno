@@ -9,6 +9,7 @@ import Automatizacion from "./pages/Automatizacion";
 import GestionDocumental from "./pages/GestionDocumental";
 import Capacitacion from "./pages/Capacitacion";
 import RespaldoServidores from "./pages/RespaldoServidores";
+import UsbEncriptados from "./pages/UsbEncriptados";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/gestion-documental" element={<GestionDocumental />} />
           <Route path="/capacitacion" element={<Capacitacion />} />
           <Route path="/respaldo-servidores" element={<RespaldoServidores />} />
+          <Route path="/usb-encriptados" element={<UsbEncriptados />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

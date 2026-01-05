@@ -49,6 +49,14 @@ const services = [
     features: ["Backup automático", "Recuperación rápida", "Seguridad total"],
     link: "/respaldo-servidores",
   },
+  {
+    icon: "bi-usb-drive",
+    title: "USB Encriptados",
+    description:
+      "Dispositivos de almacenamiento portátiles encriptados con hardware de última generación. Distribuidor oficial de iStorage® en México.",
+    features: ["Encriptación hardware", "Seguridad militar", "Administración remota"],
+    link: "/usb-encriptados",
+  },
 ];
 
 export const Services = () => {
